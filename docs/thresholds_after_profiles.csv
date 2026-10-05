@@ -1,0 +1,7 @@
+threshold,eligible_lineups,eligible_core_rows,comparison_cores,comparison_rows,comparison_lineups,comparison_mean_side_possessions
+0,4602,23010,5961,20319,4596,100099.0
+10,1830,9150,2392,6806,1815,87422.5
+25,804,4020,978,2558,787,70728.0
+50,376,1880,430,1018,358,54956.5
+100,156,780,143,320,142,39107.0
+200,60,300,39,81,54,24909.0

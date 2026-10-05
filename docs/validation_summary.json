@@ -1,0 +1,31 @@
+{
+  "reconciliation": {
+    "SecondsPlayed": {
+      "max_absolute_difference": 0.0,
+      "total_difference": 0.0
+    },
+    "OffPoss": {
+      "max_absolute_difference": 0.0,
+      "total_difference": 0.0
+    },
+    "DefPoss": {
+      "max_absolute_difference": 0.0,
+      "total_difference": 0.0
+    },
+    "Points": {
+      "max_absolute_difference": 0.0,
+      "total_difference": 0.0
+    },
+    "OpponentPoints": {
+      "max_absolute_difference": 0.0,
+      "total_difference": 0.0
+    }
+  },
+  "lineups": 16752,
+  "seasons": [
+    "2022-23"
+  ],
+  "zero_off_poss": 734,
+  "zero_def_poss": 545,
+  "nonfinite_net_rating": 1089
+}

@@ -1,0 +1,16 @@
+.venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+*credentials*
+*.pem
+data/raw/*
+data/processed/*
+*.log
+.DS_Store
+Thumbs.db
