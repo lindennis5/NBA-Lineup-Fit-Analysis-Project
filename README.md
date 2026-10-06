@@ -1,4 +1,6 @@
-# NBA Lineup Fit
+# NBA Lineup Fit Analysis Project
+
+### Does the fifth player fill the gap?
 
 ## Research Question
 
