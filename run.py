@@ -8,7 +8,8 @@ def main():
     parser.add_argument('--seasons',nargs='+',default=SEASONS,help='Consecutive NBA seasons, e.g. 2022-23 2023-24')
     parser.add_argument('--download',action='store_true',help='Retrieve missing public source caches before analysis')
     parser.add_argument('--download-only',action='store_true',help='Retrieve data without fitting models')
-    parser.add_argument('--notebooks',action='store_true',help='Build and execute the six companion notebooks')
+    parser.add_argument('--notebooks',action='store_true',help='Build and execute companion notebooks, including the release audit when available')
+    parser.add_argument('--release',action='store_true',help='Run extended inference, forward validation, official pilot checks and release figures')
     parser.add_argument('--workers',type=int,choices=[1,2,3],default=3)
     args=parser.parse_args()
     validate_seasons(args.seasons)
@@ -18,6 +19,15 @@ def main():
         return
     from src.analysis import main as analyze
     analyze(args.seasons)
+    if args.release:
+        from src.release_audit import run as audit
+        from src.official_validation import main as official
+        from src.release_figures import main as figures
+        from src.snapshots import main as snapshot
+        audit()
+        official()
+        figures()
+        snapshot()
     if args.notebooks:
         from src.notebooks import main as notebooks
         notebooks()

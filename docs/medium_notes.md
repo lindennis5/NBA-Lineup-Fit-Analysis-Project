@@ -1,3 +1,5 @@
+> Historical pilot notes. Current four-season findings, source warnings and the conclusion are in [the research report](research_report.md). Statements below about work still planned describe the earlier pilot.
+
 # Future article notes — no final article yet
 
 Working framing: **Does NBA Lineup Fit Actually Matter? Testing Whether Teams Should Fill Their Biggest Weakness**

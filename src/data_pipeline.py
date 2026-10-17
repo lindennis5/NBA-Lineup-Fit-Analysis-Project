@@ -29,6 +29,8 @@ def fetch(name, url, refresh=False):
     if path.exists() and meta.exists() and not refresh:
         payload = path.read_bytes()
         info = json.loads(meta.read_text(encoding='utf-8'))
+        if info.get('url') != url:
+            raise ValueError(f'Cache URL mismatch: {path}')
         if hashlib.sha256(payload).hexdigest() != info['sha256']:
             raise ValueError(f'Cache checksum mismatch: {path}')
         return json.loads(payload)
@@ -93,20 +95,40 @@ def complete_lineups(season, team, refresh=False, team_totals=None):
         for k in counters:
             merged[key][k]+=row.get(k,0)
     result=list(merged.values())
-    (RAW/f'pbp_{season}_Lineup_{team}_complete.json').write_text(json.dumps({'multi_row_table_data':result}),encoding='utf-8')
+    from .quality import reconcile
+    if team_totals is not None:
+        reconcile(result, team_totals)
+    path=RAW/f'pbp_{season}_Lineup_{team}_complete.json'
+    payload=json.dumps({'multi_row_table_data':result}).encode('utf-8')
+    path.write_bytes(payload)
+    sources=[{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+             for p in sorted(RAW.glob(f'pbp_{season}_Lineup_{team}_????-??-??_????-??-??.json'))]
+    path.with_suffix('.meta.json').write_text(json.dumps({'derived':True,
+        'sha256':hashlib.sha256(payload).hexdigest(),'sources':sources,
+        'retrieved_utc':datetime.now(timezone.utc).isoformat()},indent=2),encoding='utf-8')
     return result
 
 def download(seasons, refresh=False, workers=3):
     validate_seasons(seasons)
+    failures=[]
     for season in seasons:
-        teams = totals(season, 'Team', refresh=refresh)
+        try:
+            teams = totals(season, 'Team', refresh=refresh)
+            from .quality import validate_teams
+            validate_teams(teams)
+            totals(season, 'Player', refresh=refresh)
+        except Exception as exc:
+            failures.append({'season':season,'stage':'team/player','error':str(exc)})
+            continue
         if len(teams) != 30:
             raise ValueError(f'{season}: expected 30 teams, got {len(teams)}')
         print(f'{season}: teams={len(teams)}, games={sum(t["GamesPlayed"] for t in teams)/2}', flush=True)
-        totals(season, 'Player', refresh=refresh)
         def work(team):
-            rows=complete_lineups(season,team['EntityId'],refresh,team)
-            print(f'{season} {team["EntityId"]}: {len(rows)} complete lineups',flush=True)
+            try:
+                rows=complete_lineups(season,team['EntityId'],refresh,team)
+                print(f'{season} {team["EntityId"]}: {len(rows)} complete lineups',flush=True)
+            except Exception as exc:
+                failures.append({'season':season,'team_id':team['EntityId'],'error':str(exc)})
         with ThreadPoolExecutor(max_workers=workers) as pool:
             list(pool.map(work,teams))
     prior = f'{int(seasons[0][:4])-1}-{int(seasons[0][:4])%100:02d}'
@@ -114,6 +136,9 @@ def download(seasons, refresh=False, workers=3):
     manifests = [json.loads(p.read_text(encoding='utf-8')) | {'cache_file':p.name.replace('.meta','')}
                  for p in sorted(RAW.glob('pbp_*.meta.json'))]
     (ROOT/'docs'/'data_manifest.json').write_text(json.dumps(manifests, indent=2), encoding='utf-8')
+    (ROOT/'docs'/'download_failures.json').write_text(json.dumps(failures,indent=2),encoding='utf-8')
+    if failures:
+        raise RuntimeError(f'{len(failures)} retrieval failures; see docs/download_failures.json. Retry reuses caches.')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

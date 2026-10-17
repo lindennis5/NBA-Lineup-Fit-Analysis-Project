@@ -1,3 +1,5 @@
+> Historical pilot notes. Current four-season findings, source warnings and the conclusion are in [the research report](research_report.md). Statements below about work still planned describe the earlier pilot.
+
 # Data feasibility and source recommendation
 
 Investigation date: 2026-10-05. This document separates documentation claims from access tests. Actual query URLs, timestamps, and SHA-256 hashes are in `data_manifest.json`; endpoint comparison results are in `access_probes.json`.

@@ -1,0 +1,35 @@
+.venv/Scripts/python -m unittest discover -s tests -v
+test_bootstrap_studentization_matches_primary (test_inference.InferenceTests.test_bootstrap_studentization_matches_primary) ... ok
+test_forward_contrast_invariance_and_temporal_guard (test_inference.InferenceTests.test_forward_contrast_invariance_and_temporal_guard) ... ok
+test_paired_prediction_difference_known_errors (test_inference.InferenceTests.test_paired_prediction_difference_known_errors) ... ok
+test_cache_checksum_and_url (test_release_integrity.Integrity.test_cache_checksum_and_url) ... ok
+test_date_partition_disjoint_and_additive (test_release_integrity.Integrity.test_date_partition_disjoint_and_additive) ... ok
+test_full_season (test_release_integrity.Integrity.test_full_season) ... ok
+test_profile_lag_normalization_and_eligibility (test_release_integrity.Integrity.test_profile_lag_normalization_and_eligibility) ... ok
+test_reconciliation_all_fields (test_release_integrity.Integrity.test_reconciliation_all_fields) ... ok
+test_reordered_membership_aggregates_counts (test_release_integrity.Integrity.test_reordered_membership_aggregates_counts) ... ok
+test_retained_representation_weights (test_release_integrity.Integrity.test_retained_representation_weights) ... ok
+test_same_season_profile_rejected (test_release_integrity.Integrity.test_same_season_profile_rejected) ... ok
+test_core_expansion_and_order (test_research_invariants.ResearchInvariants.test_core_expansion_and_order) ... ok
+test_gap_closure (test_research_invariants.ResearchInvariants.test_gap_closure) ... ok
+test_season_contract (test_research_invariants.ResearchInvariants.test_season_contract) ... ok
+test_threshold_both_sides_and_alternatives (test_research_invariants.ResearchInvariants.test_threshold_both_sides_and_alternatives) ... ok
+test_within_estimator_matches_explicit_fixed_effects (test_research_invariants.ResearchInvariants.test_within_estimator_matches_explicit_fixed_effects) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.245s
+
+OK
+
+Exit: 0
+
+.venv/Scripts/python -m pip check
+No broken requirements found.
+
+Exit: 0
+
+.venv/Scripts/python -m compileall -q src run.py
+
+Exit: 0
+
+Seven notebooks checked: no error outputs. All release manifest code hashes match current files.

@@ -21,11 +21,12 @@ BLUE='#285D8F';ORANGE='#C87932';INK='#25313C'
 def save_figure(fig,name):
     directory=ROOT/'figures';directory.mkdir(exist_ok=True)
     fig.savefig(directory/f'{name}.png',dpi=180,bbox_inches='tight',facecolor='white')
-    fig.savefig(directory/f'{name}.svg',bbox_inches='tight',facecolor='white')
+    fig.savefig(directory/f'{name}.svg',bbox_inches='tight',facecolor='white',metadata={'Date':None})
     plt.close(fig)
 
 def make_figures(lineups, observations, profiles, raw_thresholds, feature_thresholds, coefficients):
     plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,
+        'svg.hashsalt':'nba-lineup-fit',
         'axes.spines.right':False,'axes.labelcolor':INK,'text.color':INK,'axes.titlecolor':INK,
         'axes.titleweight':'bold','figure.facecolor':'white','axes.facecolor':'white'})
     window=lineups.season.min() if lineups.season.nunique()==1 else f'{lineups.season.min()} through {lineups.season.max()}'
@@ -142,7 +143,7 @@ def main(seasons=SEASONS):
     if not np.array_equal(sql_result.comparison_cores.to_numpy(),expected):
         raise ValueError('Independent SQL threshold audit failed')
     comparison_exposure=sample.drop_duplicates('lineup_key').possessions.sum()
-    summary={'status':'preliminary_observational_v1','seasons':seasons,'unique_lineups':len(lineups),
+    summary={'status':'observational_analysis','seasons':seasons,'unique_lineups':len(lineups),
         'all_cores':observations.core_key.nunique(),'all_core_fifth_rows':len(observations),
         'all_mean_side_possessions':float(lineups.possessions.sum()),'eligible_player_profiles':len(profiles),
         'feature_complete_lineups':featured.lineup_key.nunique(),'feature_complete_rows':len(featured),

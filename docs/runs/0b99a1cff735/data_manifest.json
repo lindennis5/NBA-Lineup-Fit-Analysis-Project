@@ -1,0 +1,604 @@
+[
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2021-22&SeasonType=Regular+Season&Type=Player",
+    "retrieved_utc": "2026-10-05T23:16:10.454879+00:00",
+    "sha256": "acfe8d3f5b131807e478d059fc851eb6def24159a112c06256bdfe516a7fd53b",
+    "bytes": 3017815,
+    "cache_file": "pbp_2021-22_Player.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612737",
+    "retrieved_utc": "2026-10-05T23:03:01.926674+00:00",
+    "sha256": "bfad6ac196bccee9f891c4206d1eed50d74368bce511ee6879076b36a0f5b0cb",
+    "bytes": 971046,
+    "cache_file": "pbp_2022-23_Lineup_1610612737.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612738",
+    "retrieved_utc": "2026-10-05T23:01:23.268789+00:00",
+    "sha256": "e5475cbb472537b23613b7f409e105d5cc5e5b9797ebbef2927a9bc5c1209eec",
+    "bytes": 1066752,
+    "cache_file": "pbp_2022-23_Lineup_1610612738.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612739",
+    "retrieved_utc": "2026-10-05T23:15:15.289673+00:00",
+    "sha256": "eff7db763278c9982a9ed85b890f4bdf19c4e255199cc1b5e402b9e259e14918",
+    "bytes": 1144781,
+    "cache_file": "pbp_2022-23_Lineup_1610612739.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612739&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:33.629049+00:00",
+    "sha256": "6c1b28f15c7609d4cd41c424927d480c5cf0e0b880d3745bf9f8f4288c75a910",
+    "bytes": 1142949,
+    "cache_file": "pbp_2022-23_Lineup_1610612739_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612740",
+    "retrieved_utc": "2026-10-05T23:02:30.092283+00:00",
+    "sha256": "f6b16f13bff3c8d33b99b6c817c5bb34254bdfb5d62700a1869669e00bb715d5",
+    "bytes": 1273301,
+    "cache_file": "pbp_2022-23_Lineup_1610612740.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612740&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:06:09.171364+00:00",
+    "sha256": "9290100f4d13cd96b40794fb1fe13e9748cbe42c328999b189bf25fd3a177422",
+    "bytes": 709668,
+    "cache_file": "pbp_2022-23_Lineup_1610612740_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612740&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:06:48.009373+00:00",
+    "sha256": "2808a7ac493e52a64687822a46aaa4d0683e802319f74756afda0f05739ae4d5",
+    "bytes": 738446,
+    "cache_file": "pbp_2022-23_Lineup_1610612740_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612741",
+    "retrieved_utc": "2026-10-05T23:03:59.400232+00:00",
+    "sha256": "3f0f54309bb52e8963043ec4373eaa4fbdabecfb57b3526dd6055bb8587a3e3a",
+    "bytes": 820467,
+    "cache_file": "pbp_2022-23_Lineup_1610612741.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612741&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:34.444057+00:00",
+    "sha256": "cddf71aba7bcce6cbb74d6b10644c120c2a011654a9e7bd43fa3d01cfae909ac",
+    "bytes": 819746,
+    "cache_file": "pbp_2022-23_Lineup_1610612741_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612742",
+    "retrieved_utc": "2026-10-05T23:10:40.337651+00:00",
+    "sha256": "5c7186df74d6e63b175727689d2b14b8ebf84390563cae5b673d3e39fe0d4cd7",
+    "bytes": 1287001,
+    "cache_file": "pbp_2022-23_Lineup_1610612742.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612742&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:10:57.162331+00:00",
+    "sha256": "7ac1b9a6aae553eb1deddfa33fd64313b4bd9478f2b5059e0f20b4d9b8346b93",
+    "bytes": 584314,
+    "cache_file": "pbp_2022-23_Lineup_1610612742_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612742&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:11:57.257418+00:00",
+    "sha256": "bbfa76dd09717f0c773a68396c4c0997fa8c17bee1383fe2e2c229ed3d70417c",
+    "bytes": 933204,
+    "cache_file": "pbp_2022-23_Lineup_1610612742_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612743",
+    "retrieved_utc": "2026-10-05T23:03:13.537815+00:00",
+    "sha256": "8ae83ada6834c5bd806ad4cc4975c151999711364d70dd8f0d8211cefeac6fb7",
+    "bytes": 1084163,
+    "cache_file": "pbp_2022-23_Lineup_1610612743.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612743&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:12.548914+00:00",
+    "sha256": "fc46181b465847d030d5ded861c1e0b629f42366cd5d9fe489fc5ac8a7fc2553",
+    "bytes": 1081377,
+    "cache_file": "pbp_2022-23_Lineup_1610612743_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612744",
+    "retrieved_utc": "2026-10-05T23:01:34.578886+00:00",
+    "sha256": "cdf8d113d1a1ee743b01b08dfb711323f6be8bef858ef612e15f989026dc35c4",
+    "bytes": 1250452,
+    "cache_file": "pbp_2022-23_Lineup_1610612744.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612744&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:05:30.748417+00:00",
+    "sha256": "dc366ffcda6bd8f832f67ceb33644db27ae248574ae186d7efea568f0dc54124",
+    "bytes": 684753,
+    "cache_file": "pbp_2022-23_Lineup_1610612744_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612744&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:05:54.749582+00:00",
+    "sha256": "048622d04ee72b16fc7461bb8c767e234c030bebe275eb6ef26a054bdeb2dc8d",
+    "bytes": 829688,
+    "cache_file": "pbp_2022-23_Lineup_1610612744_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612745",
+    "retrieved_utc": "2026-10-05T23:12:26.286783+00:00",
+    "sha256": "a859f8072a996783810aaaf3ebc73f9a189e41793b737690bd9d3823b1a931e5",
+    "bytes": 1142940,
+    "cache_file": "pbp_2022-23_Lineup_1610612745.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612745&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:55.779827+00:00",
+    "sha256": "3322074e00cf2ceb2a36c4efc7341c8a24864b58a9dc0cdf065333a63ca98f5b",
+    "bytes": 1140896,
+    "cache_file": "pbp_2022-23_Lineup_1610612745_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612746",
+    "retrieved_utc": "2026-10-05T23:04:11.696601+00:00",
+    "sha256": "254b34abe02e0016c6d2e9d0268af32bacb9ce6e4cf8697f5846b1725923febc",
+    "bytes": 1332543,
+    "cache_file": "pbp_2022-23_Lineup_1610612746.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612746&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:07:49.812323+00:00",
+    "sha256": "90eb13e348b16d5e70530d8eeb80146fc5791ec7f45d89f7b580da3fd5a98da6",
+    "bytes": 728228,
+    "cache_file": "pbp_2022-23_Lineup_1610612746_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612746&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:08:12.208735+00:00",
+    "sha256": "8fc71576d1574dd65350364caabb7cc8d0d61ba815c3ae592c8855ca91a3d205",
+    "bytes": 789721,
+    "cache_file": "pbp_2022-23_Lineup_1610612746_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612747",
+    "retrieved_utc": "2026-10-05T23:03:25.647474+00:00",
+    "sha256": "97b6dd4bd823f8bf691a0e51231027600885c5d2508059d4aca4910e8f9ec165",
+    "bytes": 1382197,
+    "cache_file": "pbp_2022-23_Lineup_1610612747.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612747&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:06:31.440869+00:00",
+    "sha256": "5b2b6004a9a84380e42f95ea52ebed63ffa92e509622347b39b4499389d12a05",
+    "bytes": 742103,
+    "cache_file": "pbp_2022-23_Lineup_1610612747_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612747&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:07:05.290625+00:00",
+    "sha256": "cbda654d5cc7d1d86af651b6cdc4056a1a5e596b46bee35ca1c22da851ae93e2",
+    "bytes": 881029,
+    "cache_file": "pbp_2022-23_Lineup_1610612747_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612748",
+    "retrieved_utc": "2026-10-05T23:03:37.118470+00:00",
+    "sha256": "1bb3792318c0058cbcd8d65e0da22494f5026ab07889c840643112ed20434205",
+    "bytes": 1103944,
+    "cache_file": "pbp_2022-23_Lineup_1610612748.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612748&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:32.594115+00:00",
+    "sha256": "168937c0e1bcdeff4edeffae0ea08483b053419761f969be8cdcab90c97f91a6",
+    "bytes": 1102970,
+    "cache_file": "pbp_2022-23_Lineup_1610612748_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612749",
+    "retrieved_utc": "2026-10-05T23:15:20.607855+00:00",
+    "sha256": "244e1be3d7027feb5a6f37d5ba148a7653b76d3b8129a70cd6866ec1cfce198d",
+    "bytes": 1362464,
+    "cache_file": "pbp_2022-23_Lineup_1610612749.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612749&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:15:34.438075+00:00",
+    "sha256": "2832b8568c86a6473b1220dbad274789b8a5eee2452e2d9dc9cb3ae722f954b6",
+    "bytes": 822080,
+    "cache_file": "pbp_2022-23_Lineup_1610612749_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612749&FromDate=2023-01-01&ToDate=2023-04-01",
+    "retrieved_utc": "2026-10-05T23:15:55.073025+00:00",
+    "sha256": "7863ef584df37d6ec6f965aa5b116666776cb350c3cf4a5355ddd38be031d7ea",
+    "bytes": 958492,
+    "cache_file": "pbp_2022-23_Lineup_1610612749_2023-01-01_2023-04-01.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612749&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:46.958863+00:00",
+    "sha256": "101c1f23d755254d91595c86a7ad3c9a3d3d466e62357f206fd4d827ebd7ce27",
+    "bytes": 1064167,
+    "cache_file": "pbp_2022-23_Lineup_1610612749_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612749&FromDate=2023-04-02&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:58.130367+00:00",
+    "sha256": "ebb634fc5827a994ab7823e179940f6cab03a59bcf0aa998a80b17c65e9ef739",
+    "bytes": 151463,
+    "cache_file": "pbp_2022-23_Lineup_1610612749_2023-04-02_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612750",
+    "retrieved_utc": "2026-10-05T23:01:57.312459+00:00",
+    "sha256": "6516b48526f4f33895d897a1c5cddb50d7af09d3eaad52762f2c313ad0464c22",
+    "bytes": 1292686,
+    "cache_file": "pbp_2022-23_Lineup_1610612750.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612750&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:05:30.483662+00:00",
+    "sha256": "d57c7a4fbd3210e700935e191a61c573c4960acc46f16041979992dea2d971c2",
+    "bytes": 716467,
+    "cache_file": "pbp_2022-23_Lineup_1610612750_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612750&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:05:52.398709+00:00",
+    "sha256": "6c79ac2c50152d38e519e62d1dc164cf02b9b732e10880ab094c654bfd171733",
+    "bytes": 848916,
+    "cache_file": "pbp_2022-23_Lineup_1610612750_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612751",
+    "retrieved_utc": "2026-10-05T23:09:40.628893+00:00",
+    "sha256": "b904e1a507b7cef782b2e6587564043c3647844f9752ee9f751e33eaa31b7e4a",
+    "bytes": 1268374,
+    "cache_file": "pbp_2022-23_Lineup_1610612751.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612751&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:10:01.883709+00:00",
+    "sha256": "5ec375db7be80a40c00762e5b1bfb2dadb8064bcac87904a6e3fcd303578940a",
+    "bytes": 704059,
+    "cache_file": "pbp_2022-23_Lineup_1610612751_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612751&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:10:59.086306+00:00",
+    "sha256": "6a662124bb4173bf3835ea52310abab91bd6d4403451155f7d930de8cebdf2e8",
+    "bytes": 884051,
+    "cache_file": "pbp_2022-23_Lineup_1610612751_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612752",
+    "retrieved_utc": "2026-10-05T23:02:05.844472+00:00",
+    "sha256": "f88894c78d37a9be915ac3b5a97862d63292f28b51f9bd67ffaa420c778d79dd",
+    "bytes": 771546,
+    "cache_file": "pbp_2022-23_Lineup_1610612752.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612752&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:22.706738+00:00",
+    "sha256": "dc34c12790efaa62d16d00be566f5d6804362c1ccce79403de7fd2840210d467",
+    "bytes": 770470,
+    "cache_file": "pbp_2022-23_Lineup_1610612752_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612753",
+    "retrieved_utc": "2026-10-05T23:12:55.811942+00:00",
+    "sha256": "3bd93b4df7ba8b8be9df62cdc7deb0c8ce0564fd2717d5409e19ce90b8e2157b",
+    "bytes": 1225049,
+    "cache_file": "pbp_2022-23_Lineup_1610612753.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612753&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:13:14.797725+00:00",
+    "sha256": "1195b5dff780b489614cc02e440f6dc668a16c83310d892f6621a3e18e99deec",
+    "bytes": 760360,
+    "cache_file": "pbp_2022-23_Lineup_1610612753_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612753&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:00.024646+00:00",
+    "sha256": "b0e594c6f5ab72f8ec7bc7123cf3da442bced347c7b3d903a34583ced14c6832",
+    "bytes": 603636,
+    "cache_file": "pbp_2022-23_Lineup_1610612753_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612754",
+    "retrieved_utc": "2026-10-05T23:03:50.173762+00:00",
+    "sha256": "493f363b7fc42ec1adc8c2842f772fb41f701889bf88cf0fe6c34455687308c2",
+    "bytes": 1278376,
+    "cache_file": "pbp_2022-23_Lineup_1610612754.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612754&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:07:25.196646+00:00",
+    "sha256": "d4c58ee8ab8da99c8ea76af66fe441d630b3c8559bf7ead1ee95969e37b6e5a3",
+    "bytes": 615644,
+    "cache_file": "pbp_2022-23_Lineup_1610612754_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612754&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:08:10.834566+00:00",
+    "sha256": "5f718cf98991d51dfdfdb56a3f32fbb06e23b92f101b22c6fd3c710c99c4127b",
+    "bytes": 842199,
+    "cache_file": "pbp_2022-23_Lineup_1610612754_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612755",
+    "retrieved_utc": "2026-10-05T23:01:46.174405+00:00",
+    "sha256": "c5abc862b90dd268513a30c4045c1aa6a5cc3d72255a2404420e71c44c78b534",
+    "bytes": 1090552,
+    "cache_file": "pbp_2022-23_Lineup_1610612755.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612756",
+    "retrieved_utc": "2026-10-05T23:11:19.016686+00:00",
+    "sha256": "e314f3a63593cf2029a392763253cb36649220423f21cf76bcc4325f114f2d51",
+    "bytes": 1315805,
+    "cache_file": "pbp_2022-23_Lineup_1610612756.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612756&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:11:32.897913+00:00",
+    "sha256": "85f17b69b7f3a2b562382d3e20c56f6de4af90fc74ad90de67371657a2070b95",
+    "bytes": 645259,
+    "cache_file": "pbp_2022-23_Lineup_1610612756_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612756&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:11:58.393074+00:00",
+    "sha256": "3756b5158f07216d611fe1b526ecd51314b19f896b90ee961dc32a82af3ef2c2",
+    "bytes": 924384,
+    "cache_file": "pbp_2022-23_Lineup_1610612756_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612757",
+    "retrieved_utc": "2026-10-05T23:02:18.687790+00:00",
+    "sha256": "7b9c7128466415ec3f5d5f2c2e336ed447d7f2522056d1836c6525e6c393d422",
+    "bytes": 1207574,
+    "cache_file": "pbp_2022-23_Lineup_1610612757.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612757&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:05:24.452340+00:00",
+    "sha256": "95c09ea62463039076e6bff26ef06041e1e999e1b1a7dba44fe1194d5ef43f4c",
+    "bytes": 499670,
+    "cache_file": "pbp_2022-23_Lineup_1610612757_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612757&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:05:42.659152+00:00",
+    "sha256": "87bb8a3426e5c8d4b4f36fd93c6314a8ae380a0977e65414a710dab0a471638f",
+    "bytes": 774864,
+    "cache_file": "pbp_2022-23_Lineup_1610612757_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612758",
+    "retrieved_utc": "2026-10-05T23:02:40.519136+00:00",
+    "sha256": "babd25ae87c0cb9370c00ddad0dea1d8b9747e431aa7e57cd061c02a57d7bdd7",
+    "bytes": 941620,
+    "cache_file": "pbp_2022-23_Lineup_1610612758.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612758&FromDate=2022-10-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:26.908990+00:00",
+    "sha256": "75387e988d724b4c8863b29e61586fb572996c445ffbeea0dcee86e0021a56b7",
+    "bytes": 941498,
+    "cache_file": "pbp_2022-23_Lineup_1610612758_2022-10-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759",
+    "retrieved_utc": "2026-10-05T23:11:20.148294+00:00",
+    "sha256": "8ee9d0aef2edfe91828a3178ff9cb20dc844e0f56d88378d181a8b2a1669ea64",
+    "bytes": 1360648,
+    "cache_file": "pbp_2022-23_Lineup_1610612759.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:11:42.901955+00:00",
+    "sha256": "2537ddb1e8da27d9814454c8cfc9f128add9713da48dc152d82f83fc6edf8b02",
+    "bytes": 914061,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2023-01-01&ToDate=2023-02-15",
+    "retrieved_utc": "2026-10-05T23:14:46.421111+00:00",
+    "sha256": "6cf57ff795171208ae7b3a47342b6aecdb5ad2c1d420362f8745dbeb3fbb0852",
+    "bytes": 565656,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2023-01-01_2023-02-15.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2023-01-01&ToDate=2023-04-01",
+    "retrieved_utc": "2026-10-05T23:14:32.508618+00:00",
+    "sha256": "6e7f2b118e468cd2e111c8bc56099ebbb7a70b78730dd83d4a58b295558ef110",
+    "bytes": 1052816,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2023-01-01_2023-04-01.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:12:57.262238+00:00",
+    "sha256": "3f13d7ab97d1d47c6998a1c85172bd44dc12fe2288f0a173527e22c836b7fdad",
+    "bytes": 1121550,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2023-02-16&ToDate=2023-04-01",
+    "retrieved_utc": "2026-10-05T23:14:57.319637+00:00",
+    "sha256": "5a6784dd225190821a910272d9c6246479cd8751360a271f29e45ea46aec6398",
+    "bytes": 546716,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2023-02-16_2023-04-01.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612759&FromDate=2023-04-02&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:01.558454+00:00",
+    "sha256": "327be7385beb9190e9a4476c9d4d5aaf79d2dcc49d54fd5148e45751fca5630c",
+    "bytes": 159144,
+    "cache_file": "pbp_2022-23_Lineup_1610612759_2023-04-02_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612760",
+    "retrieved_utc": "2026-10-05T23:02:52.243663+00:00",
+    "sha256": "6c7ece8188a4566af8d7da16c7a1de3bee4109b5f10e297b7b03f8f9a642f88b",
+    "bytes": 1354364,
+    "cache_file": "pbp_2022-23_Lineup_1610612760.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612760&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:07:10.963389+00:00",
+    "sha256": "a314918328315309958a3b5d164a3717933bf3de135699a916c95489a439dc71",
+    "bytes": 899997,
+    "cache_file": "pbp_2022-23_Lineup_1610612760_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612760&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:07:38.579943+00:00",
+    "sha256": "c397785214b6071db8cc90f53456e5477b060670d22c3b804a1cbbf683b0eeaa",
+    "bytes": 955518,
+    "cache_file": "pbp_2022-23_Lineup_1610612760_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612761",
+    "retrieved_utc": "2026-10-05T23:04:21.005371+00:00",
+    "sha256": "c15a2e35b2ce328aeda3d36491b5acd9f515d15b144b8131eaf7671c6ace7e41",
+    "bytes": 1277112,
+    "cache_file": "pbp_2022-23_Lineup_1610612761.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612761&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:07:59.450070+00:00",
+    "sha256": "e5591c17a2979993e87883f48422bf6aea04f833662c39496d1ff47d31a17c9e",
+    "bytes": 767336,
+    "cache_file": "pbp_2022-23_Lineup_1610612761_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612761&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:09:10.118268+00:00",
+    "sha256": "77e171b267e62d6e9244d63f09eef36b5f638c6b79052fd63c88eaccbd229a26",
+    "bytes": 655667,
+    "cache_file": "pbp_2022-23_Lineup_1610612761_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612762",
+    "retrieved_utc": "2026-10-05T23:13:02.050071+00:00",
+    "sha256": "a9d4ef46779e8c8c45b662b97b98e6fe8e20e22f033ae18d49a2ac8082aaca90",
+    "bytes": 1338526,
+    "cache_file": "pbp_2022-23_Lineup_1610612762.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612762&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:13:15.692736+00:00",
+    "sha256": "f8f2e6d9361ab75b5c3f8afa51e63adf7395ad5bfe1b5f18d08712c8ed72d798",
+    "bytes": 601611,
+    "cache_file": "pbp_2022-23_Lineup_1610612762_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612762&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:14:48.418442+00:00",
+    "sha256": "09a9405227007cbbde3df99a296a4c471c4b2780de9f17aca94531b5f80eefbc",
+    "bytes": 902542,
+    "cache_file": "pbp_2022-23_Lineup_1610612762_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612763",
+    "retrieved_utc": "2026-10-05T23:15:21.878797+00:00",
+    "sha256": "322f0b172ddd54a53dd07aaf75afa28dc3b3bb58fed59233a7048c3342210c60",
+    "bytes": 1289700,
+    "cache_file": "pbp_2022-23_Lineup_1610612763.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612763&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:15:33.201210+00:00",
+    "sha256": "4233c66abe585e6978c07fcc3262b21f3dc4c01bee693be14fc62b77f665fdc6",
+    "bytes": 590581,
+    "cache_file": "pbp_2022-23_Lineup_1610612763_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612763&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:15:43.968134+00:00",
+    "sha256": "bcc3fc028143beccd1282cbb01061c9121f52972b7b1e6ab978329d4de399eef",
+    "bytes": 861168,
+    "cache_file": "pbp_2022-23_Lineup_1610612763_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612764",
+    "retrieved_utc": "2026-10-05T23:04:31.749110+00:00",
+    "sha256": "6b3127dd0ebe60c2dbaea7d7f39f2be9056758cc94373471a08bea08cff34644",
+    "bytes": 1309572,
+    "cache_file": "pbp_2022-23_Lineup_1610612764.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612764&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:08:29.131522+00:00",
+    "sha256": "5dedcdd274aa074fa78b596e733af1972a932ccb0f4f96d389b28437ddd1e9d0",
+    "bytes": 672293,
+    "cache_file": "pbp_2022-23_Lineup_1610612764_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612764&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:08:53.188228+00:00",
+    "sha256": "dd9702d6308200e2a8245d0f05c741169025bbfdfc8381b63ae4e5b979cc6592",
+    "bytes": 834668,
+    "cache_file": "pbp_2022-23_Lineup_1610612764_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612765",
+    "retrieved_utc": "2026-10-05T23:08:18.972499+00:00",
+    "sha256": "b28265f014cbde92efdae6107ed7ad225b5d69b4b75bb2e8b218a08ee82f7060",
+    "bytes": 1351375,
+    "cache_file": "pbp_2022-23_Lineup_1610612765.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612765&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:08:46.503980+00:00",
+    "sha256": "52f7bbb039b04059462d81e1be21893bf09fe06ad0f6bf778cd201159b017fe2",
+    "bytes": 646923,
+    "cache_file": "pbp_2022-23_Lineup_1610612765_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612765&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:09:11.346397+00:00",
+    "sha256": "a6ad31762913246fdb7a0a570e51b23996aabc6dea0b52fe5f3e20498078d19f",
+    "bytes": 901811,
+    "cache_file": "pbp_2022-23_Lineup_1610612765_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612766",
+    "retrieved_utc": "2026-10-05T23:09:21.287400+00:00",
+    "sha256": "720ecdede1ec94c2358156a83ece7d6c3d87195320108fd9e201bc11cf818c03",
+    "bytes": 1277009,
+    "cache_file": "pbp_2022-23_Lineup_1610612766.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612766&FromDate=2022-10-01&ToDate=2022-12-31",
+    "retrieved_utc": "2026-10-05T23:09:38.566341+00:00",
+    "sha256": "63fc81f30d0029256a0aa078e43f9d31a4e34ac4f8e3686cb322744116acd0c6",
+    "bytes": 627604,
+    "cache_file": "pbp_2022-23_Lineup_1610612766_2022-10-01_2022-12-31.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Lineup&TeamId=1610612766&FromDate=2023-01-01&ToDate=2023-06-30",
+    "retrieved_utc": "2026-10-05T23:09:55.727744+00:00",
+    "sha256": "014a0610d2bbbf9f6fc557f2cf0a941ba9012ef3b3e33f5f67f33d77ca22c363",
+    "bytes": 710171,
+    "cache_file": "pbp_2022-23_Lineup_1610612766_2023-01-01_2023-06-30.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Player",
+    "retrieved_utc": "2026-10-05T23:01:12.418764+00:00",
+    "sha256": "6fbee47ba03b93f60405ec8efe7aedc92c771845196dbc9e0972107d3e862665",
+    "bytes": 2981855,
+    "cache_file": "pbp_2022-23_Player.json"
+  },
+  {
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2022-23&SeasonType=Regular+Season&Type=Team",
+    "retrieved_utc": "2026-10-05T23:00:58.736081+00:00",
+    "sha256": "29d167b1d992e923b79da485a7252445c107719cf7a9f262443ee1662c53a815",
+    "bytes": 216936,
+    "cache_file": "pbp_2022-23_Team.json"
+  }
+]

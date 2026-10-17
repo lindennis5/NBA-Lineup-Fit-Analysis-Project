@@ -5,6 +5,7 @@ import re
 import numpy as np
 import pandas as pd
 from .data_pipeline import RAW, OUT, ROOT
+from .quality import validate_teams, reconcile
 
 SEASONS = ['2022-23', '2023-24', '2024-25', '2025-26']
 COUNTS = ['SecondsPlayed','OffPoss','DefPoss','Points','OpponentPoints','PlusMinus']
@@ -21,19 +22,38 @@ def player_tuple(value, size=5):
 def canonical_id(ids):
     return '-'.join(map(str, sorted(ids)))
 
+def consolidate_membership(frame):
+    """Aggregate reordered encodings of the same membership using event counts.
+
+    Exact repeated provider IDs within one response remain an error. Distinct
+    permutations may occur across disjoint date partitions; their exposure is
+    additive and must be combined before calculating rates.
+    """
+    if frame.EntityId.duplicated().any():
+        raise ValueError('Duplicate source lineup ID')
+    frame=frame.copy()
+    frame['EntityId']=frame.EntityId.map(lambda value:canonical_id(player_tuple(value)))
+    return frame.groupby(['TeamId','EntityId'],as_index=False,sort=False).agg(
+        {**{c:'sum' for c in COUNTS},'Name':'first'})
+
 def load_rows(path):
     payload=path.read_bytes()
     meta=path.with_suffix('.meta.json')
-    if meta.exists():
-        expected=json.loads(meta.read_text(encoding='utf-8'))['sha256']
-        if hashlib.sha256(payload).hexdigest()!=expected:
-            raise ValueError(f'Cache checksum mismatch: {path.name}')
+    if not meta.exists():
+        raise ValueError(f'Missing cache provenance: {path.name}; rerun --download to regenerate derived caches')
+    info=json.loads(meta.read_text(encoding='utf-8'))
+    if hashlib.sha256(payload).hexdigest()!=info['sha256']:
+        raise ValueError(f'Cache checksum mismatch: {path.name}')
+    for source in info.get('sources',[]):
+        if hashlib.sha256((path.parent/source['file']).read_bytes()).hexdigest()!=source['sha256']:
+            raise ValueError(f'Derived-cache parent checksum mismatch: {source["file"]}')
     return json.loads(payload)['multi_row_table_data']
 
 def build_lineups(seasons=SEASONS):
     records, coverage, quarantine = [], [], []
     for season in seasons:
         teams = load_rows(RAW / f'pbp_{season}_Team.json')
+        validate_teams(teams)
         for team in teams:
             tid = str(team['EntityId'])
             source_path=RAW / f'pbp_{season}_Lineup_{tid}.json'
@@ -44,6 +64,7 @@ def build_lineups(seasons=SEASONS):
             if capped or mismatch:
                 source_path=corrected_path
             rows = load_rows(source_path)
+            pm_discrepancies=reconcile(rows, team)
             frame = pd.DataFrame(rows)
             # Sparse event-count keys are omitted for zero counts by the source.
             for col in COUNTS:
@@ -56,12 +77,15 @@ def build_lineups(seasons=SEASONS):
                 raise ValueError('Requested team differs from response')
             if (frame[COUNTS[:-1]] < 0).any().any():
                 raise ValueError('Negative count')
+            source_rows=len(frame)
+            frame=consolidate_membership(frame)
             # Track truncation; do not infer complete coverage from a low last-row possession count.
             total = frame.OffPoss + frame.DefPoss
             ordered = bool((np.diff(total.to_numpy()) <= 0).all())
             cap_boundary = float(total.min()/2) if len(rows) >= 500 else 0.0
             coverage.append({'season':season,'team_id':tid,'team':team['TeamAbbreviation'],
-                'rows':len(rows),'original_query_capped':capped,'original_totals_mismatch':mismatch,'date_partitioned':source_path==corrected_path,'ordered_by_total_poss':ordered,
+                'plusminus_discrepancy_lineups':len(pm_discrepancies),
+                'rows':len(frame),'source_rows':source_rows,'membership_alias_rows':source_rows-len(frame),'original_query_capped':capped,'original_totals_mismatch':mismatch,'date_partitioned':source_path==corrected_path,'ordered_by_total_poss':ordered,
                 'cap_boundary_mean_poss':cap_boundary, 'ordered_by_seconds':bool((np.diff(frame.SecondsPlayed)<=0).all()), 'team_games':team['GamesPlayed'],
                 **{f'{c}_lineup':float(frame[c].sum()) for c in COUNTS[:-1]},
                 **{f'{c}_team':float(team.get(c,0)) for c in COUNTS[:-1]}})
@@ -70,7 +94,7 @@ def build_lineups(seasons=SEASONS):
                     ids = player_tuple(row['EntityId'])
                 except ValueError as exc:
                     quarantine.append({'season':season,'team_id':tid,'raw_id':row['EntityId'],'reason':str(exc)})
-                    continue
+                    raise ValueError(f'Invalid lineup membership in {season}/{tid}: {exc}') from exc
                 off, deff = row['OffPoss'], row['DefPoss']
                 lid = canonical_id(ids)
                 records.append({'season':season,'team_id':tid,'team':team['TeamAbbreviation'],
@@ -79,6 +103,8 @@ def build_lineups(seasons=SEASONS):
                     'lineup_name':row['Name'],'minutes':row['SecondsPlayed']/60,
                     'off_poss':off,'def_poss':deff,'possessions':(off+deff)/2,
                     'min_side_poss':min(off,deff),'points':row['Points'],'opponent_points':row['OpponentPoints'],
+                    'provider_plusminus':row['PlusMinus'],
+                    'plusminus_discrepancy':row['PlusMinus']-(row['Points']-row['OpponentPoints']),
                     'off_rating':100*row['Points']/off if off else np.nan,
                     'def_rating':100*row['OpponentPoints']/deff if deff else np.nan})
     lineups = pd.DataFrame(records)

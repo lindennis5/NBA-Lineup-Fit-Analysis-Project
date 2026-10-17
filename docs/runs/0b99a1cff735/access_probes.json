@@ -1,0 +1,15 @@
+[
+  {
+    "name": "pbp_latest_teams",
+    "url": "https://api.pbpstats.com/get-totals/nba?Season=2025-26&SeasonType=Regular+Season&Type=Team",
+    "status": 200,
+    "bytes": 213953,
+    "seconds": 0.42897534370422363
+  },
+  {
+    "name": "nba_lineup",
+    "url": "https://stats.nba.com/stats/leaguedashlineups?Conference=&DateFrom=&DateTo=&Division=&GameSegment=&GroupQuantity=5&LastNGames=0&LeagueID=00&Location=&MeasureType=Advanced&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=Totals&Period=0&PlusMinus=N&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&TeamID=0&VsConference=&VsDivision=",
+    "error": "The read operation timed out",
+    "seconds": 25.089524030685425
+  }
+]

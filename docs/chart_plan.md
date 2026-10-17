@@ -12,3 +12,16 @@ Static Matplotlib figures in the requested GitHub/notebook deliverable. All figu
 | core_example | How does the measure behave for a real core? | Grouped horizontal bars of five dimensions: one core and two fifth-player profiles | Core selected by total exposure among primary comparison cores, players by exposure, never outcomes; signed standardized axes and names. Explain profiles are lagged and the example is illustrative. |
 
 The raw complementarity–net-rating scatter is intentionally omitted: a within-core adjusted effect plot better matches the question and avoids inviting a misleading unadjusted interpretation. Full numerical tables remain available for auditing.
+
+## Release additions
+
+All added charts use reproducible static Matplotlib output (PNG/SVG), white backgrounds, labelled units and source notes. No decorative branding, watermarks or signatures. Blue is the primary mark; orange plus hatching distinguishes the second model/player. Exact values remain in versioned CSVs.
+
+| File | Question | Design and evidence | QA |
+|---|---|---|---|
+| season_effects | Does the primary association differ by outcome season? | Dot/95% interval plot, one primary estimate per validated season plus pooled, per 0.1 gap unit | Zero reference; common scale; uncertainty is franchise-clustered, not causal |
+| performance_distribution | How dispersed are observed eligible lineup outcomes? | Histogram of unique season-team lineups with all profiles and 50+ possessions each side | Count lineups once; label the eligible population, which differs from the comparison-core sample |
+| forward_prediction | Does adding fit improve later-season contrast predictions? | Grouped zero-baseline RMSE bars, one test season per pair, direct difference annotation | Train only on earlier seasons; hatching identifies fit; clarify demeaned contrasts, not absolute forecasts |
+| knicks_example | What does the metric reward for a recognizable Knicks core? | Grouped horizontal profile bars, highest-exposure eligible Knicks core, top two fifth players by exposure | Signed standardized scale; explain zero fit is not zero player value; all alternatives and exact scores in knicks_example.csv |
+
+The small number of outcome seasons is the intended study window. Season comparisons use discrete interval/bar charts, not a misleading smooth time trend.

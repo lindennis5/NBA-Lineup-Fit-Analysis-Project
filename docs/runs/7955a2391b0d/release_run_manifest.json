@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-10-17T02:39:18.075826+00:00",
+  "python": "3.12.2",
+  "seasons": [
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "primary_minutes": 500,
+  "primary_possessions_each_side": 50,
+  "bootstrap_seed": 20261016,
+  "bootstrap_draws": 1999,
+  "raw_inventory": "raw_inventory.json",
+  "code": {
+    "src\\__init__.py": "2cea4347f2a45cef12748343ba7c6b004e4ddafc4a3dc11e90403733675369ed",
+    "src\\analysis.py": "23142d2c3e15dfd4e413881321d25f75575280f3c0d6afa999531cb9c425f0ab",
+    "src\\data_pipeline.py": "860199fdbff3dee983814b58c7108729a6e60a68d064b55d29dffe4bf78c94ba",
+    "src\\features.py": "c76d496efea3afad6afba29176a8a3125f4f7a7336d6ef1642d2b818bdd56d6f",
+    "src\\lineups.py": "3e65f93d38602fb48baf80ec389773ecc9383d03b907f01f5876657b05144c1a",
+    "src\\models.py": "47bfd07ad7679c8ffee53a7b0a4dfcd230fe6fb3c45a3d1681901ce088de3ae6",
+    "src\\notebooks.py": "08286e99a1b9e49813ad4f1058e514337a568f5b48b67090e8d135b05ec04589",
+    "src\\official_validation.py": "77e2eebc7f8a7c95f6ec6c66990f82f51e97a80f6d0f0e0de820bdcd0cbcd417",
+    "src\\quality.py": "c258b88b396d31a6b6eb4aabc98c8e5a01f79422f26892db6eb50c84cea33009",
+    "src\\release_audit.py": "680b3bac3c548dd52a92a7373ee93a8b7198fbe505b0e585621d744928868e66",
+    "src\\release_figures.py": "39bcc51e473a09ad636f51aa3813e36528e574635947e839c78af0330937b72b",
+    "src\\season_validation.py": "fb1e9f3991b9411319b1b7949cfae877df1132a4f9031504cbcef58ae108418f",
+    "src\\snapshots.py": "8316158abf0daf04e11fda7035eb46365ea42c0c94f5c384d4443f633890c943"
+  }
+}

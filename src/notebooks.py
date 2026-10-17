@@ -69,11 +69,11 @@ def main():
     s=json.loads((ROOT/'docs'/'results_summary.json').read_text(encoding='utf-8'))
     build('01_data_feasibility',f"Retrieved {len(s['seasons'])} outcome seasons and {s['unique_lineups']:,} canonical lineups. Internal reconciliation is distinct from independent source validation.",
         'Compare sources before modeling. [Source recommendation](../docs/data_feasibility.md). [API documentation](https://api.pbpstats.com/docs).',[
-        ('Source access tests',"display(pd.read_json(ROOT/'docs'/'access_probes.json')[['name','seconds']])"),
+        ('Original source access probes (historical)',"display(pd.read_json(ROOT/'docs'/'access_probes.json')[['name','seconds']])"),
         ('Season coverage',"display(pd.read_csv(DATA/'season_summary.csv'))"),
         ('Team reconciliation',"audit=pd.read_csv(ROOT/'docs'/'coverage_audit.csv')\ncols=[c for c in audit if c.endswith('_difference')]\ndisplay(audit.groupby('season')[cols].agg(['min','max']))\ndisplay(audit.groupby('season').date_partitioned.sum().rename('capped_queries_recovered'))"),
         ('Validation evidence',"display(json.loads((ROOT/'docs'/'validation_summary.json').read_text()))\ndisplay(pd.read_csv(ROOT/'docs'/'quarantine.csv'))")],
-        'The 500-row API cap required date partitioning. Preserve source conventions and caches. External NBA box-score reconciliation remains a research limitation.')
+        'The 500-row API cap required date partitioning. Preserve source conventions and caches. The release adds official 2022–23 scoring/game reconciliation; independent possession and lineup-assignment validation remain limitations.')
     build('02_exploratory_analysis',f"The 50-possession sample contains {s['primary_cores']:,} comparison cores after lagged-profile eligibility.",
         'A core must retain at least two fifth players after each filter. All exposure totals are calculated on unique lineup keys.',[
         ('Before and after feature eligibility',"display(pd.read_csv(DATA/'thresholds_before_profiles.csv'))\ndisplay(pd.read_csv(DATA/'thresholds_after_profiles.csv'))"),
@@ -108,5 +108,15 @@ def main():
         ('Full specification sensitivity',"display(coef[coef.term==coef.fit_column][['threshold','fit_column','weighted','skill_controls','coefficient','ci_low','ci_high','p_value']].round(4))"),
         ('Holdout contrasts',"cv=pd.read_csv(DATA/'heldout_club_validation.csv')\ndisplay(cv.groupby('model')[['squared_error_sum','weight_sum']].sum().assign(rmse=lambda x:np.sqrt(x.squared_error_sum/x.weight_sum)))\nprint('Test outcomes are demeaned within core only to score contrasts; this is not prospective absolute-rating prediction.')")],
         'An adjusted association does not show that replacing a player would cause improvement. Residual talent error, lineup selection, opponent strength, and defensive measurement remain limitations. Null estimates or weaker alternative specifications must remain visible.')
+    if (ROOT/'docs'/'extended_coefficients.csv').exists():
+        build('07_release_audit','The extended audit separates adjusted association, predictive usefulness and measurement limitations.',
+            'The primary specification is unchanged. Alternatives are exploratory and reuse the same observations. See [research report](../docs/research_report.md) for the detailed conclusion and plain-language explanation.',[
+            ('Data coverage and membership repairs',"audit=pd.read_csv(ROOT/'docs'/'coverage_audit.csv')\ndisplay(audit.groupby('season')[['rows','membership_alias_rows','plusminus_discrepancy_lineups']].sum())\ndisplay(pd.read_csv(ROOT/'docs'/'pilot_reproduction.csv').filter(like='_difference').abs().max())"),
+            ('Independent official benchmark',"official=pd.read_csv(ROOT/'docs'/'official_reconciliation.csv')\ndisplay(official.filter(like='_difference').abs().max())\nprint('All 30 teams, 2022-23 games and scoring only; this does not validate possessions or lineup membership.')"),
+            ('Season and specification estimates',"extended=pd.read_csv(ROOT/'docs'/'extended_coefficients.csv')\ndisplay(extended[extended.term==extended.fit_column][['scope','specification','threshold','coefficient','ci_low','ci_high','lineups']])\ndisplay(Image(filename=str(ROOT/'figures'/'season_effects.png')))"),
+            ('Small-cluster inference and identification',"display(pd.DataFrame(json.loads((ROOT/'docs'/'inference_diagnostics.json').read_text())).T)\nprint('Bootstrap and jackknife retain franchise dependence assumptions; Kish counts are exposure summaries, not independent sample sizes.')"),
+            ('Forward prediction',"path=ROOT/'docs'/'season_forward_validation.csv'\nif path.stat().st_size>5:\n    display(pd.read_csv(path))\n    display(json.loads((ROOT/'docs'/'predictive_uncertainty.json').read_text()))\n    display(Image(filename=str(ROOT/'figures'/'forward_prediction.png')))\nelse:\n    print('Only one outcome season; forward validation is unavailable.')"),
+            ('Knicks illustration selected by exposure',"display(pd.read_csv(ROOT/'docs'/'knicks_example.csv')[['season','fifth_id_name','possessions','weakest_skill','deficiency_gap','complementarity']])\ndisplay(Image(filename=str(ROOT/'figures'/'knicks_example.png')))\nprint('Zero gap closure does not mean zero player value. The metric rewards only the selected below-average dimension.')")],
+            'Use held-out performance to judge the extra information supplied by the metric. A null association is not proof that basketball fit is irrelevant. No causal substitution or roster recommendation follows from these aggregates.')
 
 if __name__=='__main__':main()
