@@ -1,3 +1,5 @@
+> Current release: the original design below is retained; expanded inference, prediction, sensitivity choices and unresolved source issues are documented in [audit findings](audit_findings.md) and [the research report](research_report.md).
+
 # Methodology: initial specification
 
 ## Question and estimand

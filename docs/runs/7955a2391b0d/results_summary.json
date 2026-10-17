@@ -1,0 +1,28 @@
+{
+  "status": "observational_analysis",
+  "seasons": [
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "unique_lineups": 70064,
+  "all_cores": 130312,
+  "all_core_fifth_rows": 350320,
+  "all_mean_side_possessions": 977316.0,
+  "eligible_player_profiles": 1477,
+  "feature_complete_lineups": 19795,
+  "feature_complete_rows": 98975,
+  "primary_rows": 4321,
+  "primary_cores": 1811,
+  "primary_lineups": 1537,
+  "primary_mean_side_possessions": 236848.5,
+  "primary_clubs": 30,
+  "talent_complementarity_correlation": 0.30255252548776024,
+  "zero_fill_share": 0.3929645915297385,
+  "no_gap_core_share": 0.09276642738818332,
+  "heldout_rmse": {
+    "plus_complementarity": 10.817923911417733,
+    "talent_and_skills": 10.812718205053775
+  }
+}

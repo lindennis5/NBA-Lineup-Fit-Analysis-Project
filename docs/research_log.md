@@ -1,3 +1,5 @@
+> Historical pilot notes. Current four-season findings, source warnings and the conclusion are in [the research report](research_report.md). Statements below about work still planned describe the earlier pilot.
+
 # Research log
 
 ## 2026-10-05 — Initial feasibility and build

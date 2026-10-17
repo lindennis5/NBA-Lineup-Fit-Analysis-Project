@@ -1,0 +1,9 @@
+{
+  "delta_rmse": 0.0009271615528660959,
+  "ci_low": -0.00572336983689814,
+  "ci_high": 0.006855432716386908,
+  "draws": 1999,
+  "seed": 20261016,
+  "clubs": 30,
+  "interpretation": "Positive means worse with fit. Conditional on fitted models; training variability and cross-franchise dependence not represented."
+}

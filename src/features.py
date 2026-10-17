@@ -15,13 +15,16 @@ def zscore(values):
         raise ValueError('Degenerate normalization population')
     return (values-values.mean())/sd
 
-def player_profiles(seasons=SEASONS, minimum_minutes=500):
+def player_profiles(seasons=SEASONS, minimum_minutes=500, write_output=True):
+    OUT.mkdir(parents=True, exist_ok=True)
     profiles=[]
     for season in seasons:
         start=int(season[:4]); prior=f'{start-1}-{start%100:02d}'
         p=pd.DataFrame(load_rows(RAW/f'pbp_{prior}_Player.json'))
         if p.EntityId.duplicated().any():
             raise ValueError('League player totals must have one row per player, including traded players')
+        if len(p)>=500 and not p.SecondsPlayed.is_monotonic_decreasing:
+            raise ValueError('Cannot verify player-cap eligibility without descending playing-time order')
         if len(p)>=500 and p.SecondsPlayed.min()/60>=minimum_minutes:
             raise ValueError('Player cap may exclude normalization-eligible players')
         p=p[p.SecondsPlayed>=minimum_minutes*60].copy()
@@ -58,7 +61,8 @@ def player_profiles(seasons=SEASONS, minimum_minutes=500):
     result=pd.concat(profiles,ignore_index=True)
     if not np.isfinite(result[SKILLS+['quality']].to_numpy()).all():
         raise ValueError('Nonfinite profile')
-    result.to_csv(OUT/'player_profiles.csv',index=False)
+    if write_output:
+        result.to_csv(OUT/'player_profiles.csv',index=False)
     return result
 
 def complementarity(core, fifth):
@@ -73,7 +77,11 @@ def complementarity(core, fifth):
     uncapped=(np.maximum(0,-lowest)[:,None]*fifth*ties).sum(axis=1)/ties.sum(axis=1)
     return main,all_gap,uncapped
 
-def attach_features(observations, profiles):
+def attach_features(observations, profiles, write_output=True):
+    if not ((profiles.season.str[:4].astype(int)-profiles.feature_season.str[:4].astype(int))==1).all():
+        raise ValueError('Profiles must be lagged exactly one season')
+    if not np.isfinite(profiles[SKILLS+['quality']].to_numpy()).all():
+        raise ValueError('Nonfinite profile values')
     d=observations.copy()
     for role in ['c1','c2','c3','c4','fifth_id']:
         columns=['season','player_id','quality','name']+SKILLS
@@ -91,6 +99,7 @@ def attach_features(observations, profiles):
     d['deficiency_gap']=np.maximum(0,-core.min(axis=1))
     d['complementarity'],d['complementarity_all'],d['complementarity_uncapped']=complementarity(core,fifth)
     d['complementarity_no_interior'],_,_=complementarity(core[:,:4],fifth[:,:4])
-    d.to_csv(OUT/'observations.csv',index=False)
-    coverage.to_csv(OUT/'feature_coverage.csv',index=False)
+    if write_output:
+        d.to_csv(OUT/'observations.csv',index=False)
+        coverage.to_csv(OUT/'feature_coverage.csv',index=False)
     return d,coverage

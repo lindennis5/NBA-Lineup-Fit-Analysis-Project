@@ -8,14 +8,25 @@ from .features import SKILLS
 from .lineups import comparison_sample
 from .data_pipeline import OUT
 
-def fit_within(observations, threshold=50, fit_column='complementarity', weighted=True, skill_controls=True):
+def lineup_weights(d, weighted=True, weight_mode='lineup'):
+    if weight_mode not in ['lineup','representation']:
+        raise ValueError('Unknown weight mode')
+    multiplicity=d.groupby('lineup_key').lineup_key.transform('size')
+    return (d.possessions if weighted else pd.Series(1.,index=d.index))/(multiplicity if weight_mode=='lineup' else 1)
+
+def fit_within(observations, threshold=50, fit_column='complementarity', weighted=True, skill_controls=True,
+               quality_column='fifth_quality', weight_mode='lineup'):
     d=comparison_sample(observations,threshold).reset_index(drop=True)
-    columns=['fifth_quality']+([f'fifth_{s}' for s in SKILLS] if skill_controls else [])
+    if d.duplicated(['core_key','fifth_id']).any():
+        raise ValueError('Duplicate core/fifth observation')
+    quality_columns=quality_column if isinstance(quality_column,list) else ([quality_column] if quality_column else [])
+    columns=quality_columns+([f'fifth_{s}' for s in SKILLS] if skill_controls else [])
     if fit_column:
         columns.append(fit_column)
     # Each lineup contributes its original exposure once across retained representations.
-    multiplicity=d.groupby('lineup_key').lineup_key.transform('size')
-    w=(d.possessions if weighted else pd.Series(1.,index=d.index))/multiplicity
+    w=lineup_weights(d,weighted,weight_mode)
+    if not np.isfinite(d[['net_rating']+columns].to_numpy()).all() or not np.isfinite(w).all() or (w<=0).any():
+        raise ValueError('Nonfinite regression inputs or invalid weights')
     numeric=d[['net_rating']+columns]
     means=numeric.mul(w,axis=0).groupby(d.core_key).transform('sum').div(w.groupby(d.core_key).transform('sum'),axis=0)
     within=numeric-means
