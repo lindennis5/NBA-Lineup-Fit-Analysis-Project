@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-20T22:58:54.461740+00:00",
+  "generated_utc": "2026-10-20T23:03:17.079137+00:00",
   "python": "3.14.8",
   "seasons": [
     "2022-23",
@@ -16,7 +16,7 @@
     "src/__init__.py": "2cea4347f2a45cef12748343ba7c6b004e4ddafc4a3dc11e90403733675369ed",
     "src/alternative_metrics.py": "d4291ba3c19f68ead6eaf134ce8348af91ebaef951e3050bee2afaf09fdac755",
     "src/analysis.py": "2c7df2ec48939b0143ea87904a6a2282ba13119afbd491edb31662189f95afc1",
-    "src/claims.py": "a69f15c7787c1312c20cc790d0d38d36318400457d230871854de44c281f7f23",
+    "src/claims.py": "51f83dcc1682d3bc159ea522b895dffbc80c0b9fd723a2cfc9e70ec0669f1576",
     "src/data_pipeline.py": "860199fdbff3dee983814b58c7108729a6e60a68d064b55d29dffe4bf78c94ba",
     "src/effect_scale.py": "8cc23d33adc69f9f97e02b4035fec22a3862625ad272e8827371b7fa98bd6a74",
     "src/external_validation.py": "cdc1edf11d923c77a8de9e430fc3505bb78fb4c6947d10e829825b484ffc08d3",

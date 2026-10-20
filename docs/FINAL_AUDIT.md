@@ -17,7 +17,7 @@ Branch `finish/final-release`. Plan: [`PLAN.md`](../PLAN.md). Pre-registration: 
 
 ## B1. Reproducibility
 
-The raw cache had to be rebuilt (it held only 2022–23 at the start). The provider (api.pbpstats.com) was slow and intermittently returned HTTP 502; the download was stopped by the project owner with 450 of 457 payload files present. The 7 absent files are `probe_*.json`, `pbp_latest_teams.json`, `pbp_team_lineup.json` and `pbpstats_openapi.json`, written during the original feasibility probes; no analysis step reads them. Every payload that was re-downloaded matches its recorded checksum, so the provider has not revised the records retrieved. The results of the final run are archived in `docs/runs/bab0fe46c773`. Python 3.14.8 with the locked dependencies reproduces the Windows/3.12 results to within 1e-9.
+The raw cache had to be rebuilt (it held only 2022–23 at the start). The provider (api.pbpstats.com) was slow and intermittently returned HTTP 502; the download was stopped by the project owner with 450 of 457 payload files present. The 7 absent files are `probe_*.json`, `pbp_latest_teams.json`, `pbp_team_lineup.json` and `pbpstats_openapi.json`, written during the original feasibility probes; no analysis step reads them. Every payload that was re-downloaded matches its recorded checksum, so the provider has not revised the records retrieved. The results of the final run are archived in `docs/runs/add2163bee5b`. Python 3.14.8 with the locked dependencies reproduces the Windows/3.12 results to within 1e-9.
 
 ## B2. The 2024–25 and 2025–26 discrepancies
 
