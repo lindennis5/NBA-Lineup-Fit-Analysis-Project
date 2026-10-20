@@ -1,0 +1,128 @@
+{
+  "2022-23": {
+    "teams": 30,
+    "games_each_82": true,
+    "distinct_lineups": 16752,
+    "unresolved_ids": {
+      "lineups": 252,
+      "lineup_share": 0.01504297994269341,
+      "possession_share": 0.006491489118171264
+    },
+    "players_on_more_than_3_teams": [],
+    "team_minutes_out_of_range": [],
+    "team_pace_out_of_range": [],
+    "team_minutes_min_max": [
+      3946.0,
+      3996.0
+    ],
+    "pace_min_max": [
+      96.23170731707317,
+      102.14634146341463
+    ],
+    "player_to_team_points_ratio": 0.9988586700315816,
+    "points_ratio_ok": true,
+    "profile_coverage": {
+      "lineups_complete": 4905,
+      "lineup_share": 0.2928008595988539,
+      "possession_share": 0.40984678777572475
+    },
+    "pass": true
+  },
+  "2023-24": {
+    "teams": 30,
+    "games_each_82": true,
+    "distinct_lineups": 15870,
+    "unresolved_ids": {
+      "lineups": 673,
+      "lineup_share": 0.04240705734089477,
+      "possession_share": 0.01704018881369476
+    },
+    "players_on_more_than_3_teams": [],
+    "team_minutes_out_of_range": [],
+    "team_pace_out_of_range": [],
+    "team_minutes_min_max": [
+      3941.0,
+      3996.0
+    ],
+    "pace_min_max": [
+      95.1219512195122,
+      102.3048780487805
+    ],
+    "player_to_team_points_ratio": 0.9972309225512529,
+    "points_ratio_ok": true,
+    "profile_coverage": {
+      "lineups_complete": 5240,
+      "lineup_share": 0.33018273471959675,
+      "possession_share": 0.5077292517062844
+    },
+    "pass": true
+  },
+  "2024-25": {
+    "teams": 30,
+    "games_each_82": true,
+    "distinct_lineups": 17941,
+    "unresolved_ids": {
+      "lineups": 685,
+      "lineup_share": 0.03818070341675492,
+      "possession_share": 0.018856547492083285
+    },
+    "players_on_more_than_3_teams": [],
+    "team_minutes_out_of_range": [],
+    "team_pace_out_of_range": [],
+    "team_minutes_min_max": [
+      3941.0,
+      3986.0
+    ],
+    "pace_min_max": [
+      95.6829268292683,
+      102.86585365853658
+    ],
+    "player_to_team_points_ratio": 0.9967458823445364,
+    "points_ratio_ok": true,
+    "profile_coverage": {
+      "lineups_complete": 4444,
+      "lineup_share": 0.24770079705702022,
+      "possession_share": 0.4214091751849968
+    },
+    "pass": true
+  },
+  "2025-26": {
+    "teams": 30,
+    "games_each_82": true,
+    "distinct_lineups": 19501,
+    "unresolved_ids": {
+      "lineups": 1132,
+      "lineup_share": 0.058048305215117176,
+      "possession_share": 0.02849411468342807
+    },
+    "players_on_more_than_3_teams": [
+      1629646
+    ],
+    "team_minutes_out_of_range": [],
+    "team_pace_out_of_range": [],
+    "team_minutes_min_max": [
+      3941.0,
+      3986.0
+    ],
+    "pace_min_max": [
+      94.90243902439025,
+      103.21951219512195
+    ],
+    "player_to_team_points_ratio": 0.9952249344219639,
+    "points_ratio_ok": true,
+    "profile_coverage": {
+      "lineups_complete": 5206,
+      "lineup_share": 0.26696066868365725,
+      "possession_share": 0.39225015337984165
+    },
+    "pass": false
+  },
+  "spot_check": {
+    "players": 10,
+    "rows": 50,
+    "unmatched_rows": 0,
+    "rows_with_exact_points_assists_blocks": 48,
+    "matched_rows": 50,
+    "max_abs_minutes_rel_diff": 0.00031500572737683534
+  }
+}

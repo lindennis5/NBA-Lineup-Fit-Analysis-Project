@@ -18,7 +18,7 @@
   "primary_lineups": 1537,
   "primary_mean_side_possessions": 236848.5,
   "primary_clubs": 30,
-  "talent_complementarity_correlation": 0.30255252548776024,
+  "talent_complementarity_correlation": 0.3025525254877602,
   "zero_fill_share": 0.3929645915297385,
   "no_gap_core_share": 0.09276642738818332,
   "heldout_rmse": {
