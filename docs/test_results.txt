@@ -1,4 +1,18 @@
-.venv/Scripts/python -m unittest discover -s tests -v
+test_a1_zero_when_no_gap (test_alternative_metrics.AlternativeMetrics.test_a1_zero_when_no_gap) ... ok
+test_a2_redundancy (test_alternative_metrics.AlternativeMetrics.test_a2_redundancy) ... ok
+test_a3_uses_best_core_player_not_mean (test_alternative_metrics.AlternativeMetrics.test_a3_uses_best_core_player_not_mean) ... ok
+test_add_alternatives_preserves_original_columns (test_alternative_metrics.AlternativeMetrics.test_add_alternatives_preserves_original_columns) ... ok
+test_original_gives_brunson_zero_but_a1_credits_him (test_alternative_metrics.AlternativeMetrics.test_original_gives_brunson_zero_but_a1_credits_him) ... ok
+test_banned_wording_absent (test_claims_trace.ClaimsTrace.test_banned_wording_absent) ... ok
+test_claims_registry_exists (test_claims_trace.ClaimsTrace.test_claims_registry_exists) ... ok
+test_detector_flags_fabricated_number (test_claims_trace.ClaimsTrace.test_detector_flags_fabricated_number) ... ok
+test_numbers_trace_to_outputs (test_claims_trace.ClaimsTrace.test_numbers_trace_to_outputs) ... ok
+test_compare_flags_point_gap_and_possession_gap (test_external_validation.ExternalValidation.test_compare_flags_point_gap_and_possession_gap) ... ok
+test_parse_and_alias (test_external_validation.ExternalValidation.test_parse_and_alias) ... ok
+test_parse_requires_thirty_teams (test_external_validation.ExternalValidation.test_parse_requires_thirty_teams) ... ok
+test_holm_matches_hand_calculation (test_final_robustness.FinalRobustness.test_holm_matches_hand_calculation) ... ok
+test_scaled_effect_and_equivalence (test_final_robustness.FinalRobustness.test_scaled_effect_and_equivalence) ... ok
+test_within_core_sd_ignores_core_level (test_final_robustness.FinalRobustness.test_within_core_sd_ignores_core_level) ... ok
 test_bootstrap_studentization_matches_primary (test_inference.InferenceTests.test_bootstrap_studentization_matches_primary) ... ok
 test_forward_contrast_invariance_and_temporal_guard (test_inference.InferenceTests.test_forward_contrast_invariance_and_temporal_guard) ... ok
 test_paired_prediction_difference_known_errors (test_inference.InferenceTests.test_paired_prediction_difference_known_errors) ... ok
@@ -15,21 +29,12 @@ test_gap_closure (test_research_invariants.ResearchInvariants.test_gap_closure) 
 test_season_contract (test_research_invariants.ResearchInvariants.test_season_contract) ... ok
 test_threshold_both_sides_and_alternatives (test_research_invariants.ResearchInvariants.test_threshold_both_sides_and_alternatives) ... ok
 test_within_estimator_matches_explicit_fixed_effects (test_research_invariants.ResearchInvariants.test_within_estimator_matches_explicit_fixed_effects) ... ok
+test_players_on_many_teams (test_structural_checks.StructuralChecks.test_players_on_many_teams) ... ok
+test_profile_share_and_names (test_structural_checks.StructuralChecks.test_profile_share_and_names) ... ok
+test_range_violations_and_ratio (test_structural_checks.StructuralChecks.test_range_violations_and_ratio) ... ok
+test_unresolved_exposure (test_structural_checks.StructuralChecks.test_unresolved_exposure) ... ok
 
 ----------------------------------------------------------------------
-Ran 16 tests in 0.245s
+Ran 35 tests in 0.208s
 
 OK
-
-Exit: 0
-
-.venv/Scripts/python -m pip check
-No broken requirements found.
-
-Exit: 0
-
-.venv/Scripts/python -m compileall -q src run.py
-
-Exit: 0
-
-Seven notebooks checked: no error outputs. All release manifest code hashes match current files.

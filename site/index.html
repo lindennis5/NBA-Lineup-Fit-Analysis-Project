@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBA Lineup Fit Analysis</title>
+<meta name="description" content="Does filling a four-player lineup's biggest skill gap help more than adding a better player? A four-season test.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main>
+<nav><a href="#findings">Findings</a><a href="#knicks">Knicks</a><a href="#fans">For fans</a><a href="#limits">Limits</a></nav>
+<h1>Does filling a lineup's biggest skill gap beat adding the better player?</h1>
+<p class="lede">I tested the "fit" argument on four NBA seasons of lineup data. The honest answer so far: no reliable evidence that it does.</p>
+
+<h2 id="findings">Findings</h2>
+<div class="callout"><strong>A null result.</strong> After accounting for the fifth player's prior production and skills, closing the core's largest measured gap shows no benefit. This concerns one definition of fit, not whether fit matters.</div>
+<table>
+<thead><tr><th>Sample</th><th>Effect per 0.1 gap closed</th><th>95% interval</th><th>Lineups</th></tr></thead>
+<tbody>
+<tr><td>2022–23 and 2023–24 (independently validated)</td><td>−0.03</td><td>[−1.63, +1.57]</td><td>808</td></tr>
+<tr><td>All four seasons (two provisional)</td><td>−0.04</td><td>[−0.91, +0.82]</td><td>1,537</td></tr>
+</tbody></table>
+<p>Effects are net points per 100 possessions. The score also did not improve next-season predictions (change in error +0.0009, interval [−0.0057, +0.0069]). These are associations among observed lineups, not causal effects.</p>
+<figure><img src="assets/season_effects.png" alt="Dot-and-interval chart of the gap-closure effect for validated seasons, all seasons and each season, all intervals spanning zero"><figcaption>Effect by sample with 95% intervals. Every interval includes zero.</figcaption></figure>
+
+<h2 id="knicks">The Knicks example: why Jalen Brunson scores zero</h2>
+<p>In 2024–25 one Knicks core was Karl-Anthony Towns, OG Anunoby, Josh Hart and Mikal Bridges. Its largest gap is blocks, only 0.34 SD below average. Jalen Brunson cannot close it, so his fit score is zero, despite creation of +3.46 SD and playmaking of +1.61 SD. McBride, Payne and Wright also score zero. Of the rows analyzed, 39.3% score exactly zero. A zero is not a verdict on Brunson; it shows how narrow the score is.</p>
+<figure><img src="assets/knicks_example.png" alt="Bar chart of five skills for the Knicks core average and candidate fifth players including Jalen Brunson"><figcaption>Skill profiles for the core and candidate fifth players.</figcaption></figure>
+<figure><img src="assets/talent_complementarity.png" alt="Hexbin chart of fifth-player talent against the fit score showing a large pile of zeros"><figcaption>Fit score against talent. The pile at zero is why the score separates players poorly.</figcaption></figure>
+
+<h2 id="fans">What Does This Actually Mean for NBA Fans?</h2>
+<p>Teams talk about fit because five great shooters with no rebounder struggle, and a lineup with no creator stalls. This study measured the simplest version of the idea, and it added nothing beyond talent and skills in these seasons. That does not show chemistry is fake: it shows one crude box-score measure of fit did not show up in noisy lineup data.</p>
+<ul>
+<li><strong>Fans:</strong> talent and minutes explain most of what you see; ask what was measured when someone says a player "fills a hole".</li>
+<li><strong>Coaches:</strong> do not choose a fifth starter with this score; it cannot separate Brunson from McBride.</li>
+<li><strong>Front offices:</strong> the data cannot show fit pays off, and cannot rule out a modest benefit.</li>
+<li><strong>Still open:</strong> whether tracking data, defensive impact and shooting gravity reveal an effect box scores cannot.</li>
+</ul>
+<p><a href="https://github.com/lindennis5/NBA-Lineup-Fit-Analysis-Project/blob/main/docs/fans.md">Read the full explanation</a>.</p>
+
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Two of four seasons failed an independent data check, so the preferred estimate uses only the other two.</li>
+<li>Coaches choose lineups; injuries, opponents and matchups are not modeled.</li>
+<li>Blocks are not defense, and Game Score is not impact.</li>
+<li>The intervals leave room for modest effects of either sign.</li>
+</ul>
+
+<h2>Code, audit and article</h2>
+<p><a href="https://github.com/lindennis5/NBA-Lineup-Fit-Analysis-Project">Repository</a> · <a href="https://github.com/lindennis5/NBA-Lineup-Fit-Analysis-Project/blob/main/docs/FINAL_AUDIT.md">Audit</a> · <a href="https://github.com/lindennis5/NBA-Lineup-Fit-Analysis-Project/blob/main/docs/medium_article_outline.md">Article</a></p>
+<footer>Data: PBP Stats (regular seasons), checked against Basketball-Reference team totals. Observational analysis by Dennis Lin.</footer>
+</main>
+</body>
+</html>

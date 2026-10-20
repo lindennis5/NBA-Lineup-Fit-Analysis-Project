@@ -22,8 +22,12 @@ def load(name, directory=DOCS):
     return json.loads(path.read_text(encoding='utf-8')) if name.endswith('.json') else pd.read_csv(path)
 
 def put(values, key, value):
-    if value is not None and np.isfinite(value):
-        values[key] = float(value)
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return
+    if np.isfinite(number):
+        values[key] = number
 
 def build():
     v = dict(CONSTANTS)
@@ -44,6 +48,16 @@ def build():
                 put(v, f'{base}.{col}', r.get(col))
             for col in ['coefficient_per_unit', 'ci_low', 'ci_high']:   # per 0.1 unit, as quoted in prose
                 put(v, f'{base}.{col}_per_0.1', r.get(col) * .1 if pd.notna(r.get(col)) else None)
+    ext_c = load('extended_coefficients.csv')
+    if ext_c is not None:
+        for _, r in ext_c[ext_c.term.isin(['complementarity', 'fifth_quality'])].iterrows():
+            base = f'ext.{r.scope}.{r.specification}.t{int(r.threshold)}.{r.term}'
+            for col in ['coefficient', 'ci_low', 'ci_high', 'p_value']:
+                put(v, f'{base}.{col}', r[col])
+            for col in ['coefficient', 'ci_low', 'ci_high']:
+                put(v, f'{base}.{col}_per_0.1', r[col] * .1)
+            for col in ['lineups', 'cores', 'clubs']:
+                put(v, f'{base}.{col}', r[col])
     meta = load('metric_comparison.csv', AUDIT)
     if meta is not None:
         for _, r in meta.iterrows():
