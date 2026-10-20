@@ -117,11 +117,22 @@ def compare(season, provider, external):
     out['def_rel_gap'] = (p.DefPoss - est_def) / est_def
     return out.reset_index(names='team')
 
+def provider_totals(season):
+    """Provider team totals from the raw cache, or (if absent) the committed coverage audit copy."""
+    path = RAW / f'pbp_{season}_Team.json'
+    if path.exists():
+        return pd.DataFrame(load_rows(path)), 'raw cache'
+    cov = pd.read_csv(ROOT / 'docs' / 'coverage_audit.csv')
+    cov = cov[cov.season == season].rename(columns={'team': 'TeamAbbreviation', 'team_games': 'GamesPlayed',
+        'Points_team': 'Points', 'OpponentPoints_team': 'OpponentPoints', 'OffPoss_team': 'OffPoss', 'DefPoss_team': 'DefPoss'})
+    return cov, 'docs/coverage_audit.csv (team totals reconciled to the provider at build time)'
+
 def main(seasons=SEASONS):
     AUDIT.mkdir(parents=True, exist_ok=True)
     frames = []
     for season in seasons:
-        provider = pd.DataFrame(load_rows(RAW / f'pbp_{season}_Team.json'))
+        provider, origin = provider_totals(season)
+        print(f'{season}: provider totals from {origin}')
         frames.append(compare(season, provider, fetch(season)))
     check = pd.concat(frames, ignore_index=True)
     status = pd.read_csv(ROOT / 'docs' / 'season_validation_status.csv')
