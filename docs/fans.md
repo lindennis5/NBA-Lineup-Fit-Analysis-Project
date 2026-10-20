@@ -30,4 +30,4 @@ A null result here says one specific thing: this particular score, built from bo
 
 ## What remains unanswered
 
-Whether better measures (tracking data, defensive impact, shooting gravity) find a fit effect these box-score proxies cannot. Whether a different definition of fit does better: three alternatives were set out in advance and are reported in the [audit](FINAL_AUDIT.md). Whether the two seasons with unresolved data issues change anything once the provider's counts are fixed. And whether any of this reflects cause and effect, which a study of observed lineups cannot say.
+Whether better measures (tracking data, defensive impact, shooting gravity) find a fit effect these box-score proxies cannot. Whether a different definition of fit does better: three alternatives were set out in advance, including one that credits skill wherever the core is weak, and all three came out null ([audit](FINAL_AUDIT.md)). Whether the two seasons with unresolved data issues change anything once the provider's counts are fixed. And whether any of this reflects cause and effect, which a study of observed lineups cannot say.

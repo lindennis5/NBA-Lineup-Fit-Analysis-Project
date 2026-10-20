@@ -22,11 +22,24 @@ def main():
     if args.release:
         from src.release_audit import run as audit
         from src.official_validation import main as official
-        from src.release_figures import main as figures
+        from src.external_validation import main as external
+        from src.structural_checks import main as structural
+        from src.final_robustness import main as robustness
+        from src.metric_comparison import main as metrics
+        from src.final_figures import main as figures
+        from src.claims import main as claims
         from src.snapshots import main as snapshot
         audit()
         official()
-        figures()
+        if list(args.seasons)==SEASONS:   # final audit steps need all four seasons
+            external()
+            structural()
+            robustness()
+            metrics()
+            figures()
+            claims()
+        else:
+            print('Final audit steps skipped: they require all four seasons.')
         snapshot()
     if args.notebooks:
         from src.notebooks import main as notebooks

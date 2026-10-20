@@ -35,6 +35,6 @@ test_range_violations_and_ratio (test_structural_checks.StructuralChecks.test_ra
 test_unresolved_exposure (test_structural_checks.StructuralChecks.test_unresolved_exposure) ... ok
 
 ----------------------------------------------------------------------
-Ran 35 tests in 0.208s
+Ran 35 tests in 0.225s
 
 OK

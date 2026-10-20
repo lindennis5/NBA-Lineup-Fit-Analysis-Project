@@ -1,0 +1,83 @@
+{
+  "validated_seasons": [
+    "2022-23",
+    "2023-24"
+  ],
+  "verdicts": {
+    "alt_deficiency_supply": {
+      "gates": {
+        "holm_p_below_0.05": false,
+        "pooled_same_sign_ci_excludes_0": false,
+        "forward_ci_entirely_below_0": false
+      },
+      "verdict": "not supported"
+    },
+    "alt_redundancy": {
+      "gates": {
+        "holm_p_below_0.05": false,
+        "pooled_same_sign_ci_excludes_0": false,
+        "forward_ci_entirely_below_0": false
+      },
+      "verdict": "not supported"
+    },
+    "alt_specialist_coverage": {
+      "gates": {
+        "holm_p_below_0.05": false,
+        "pooled_same_sign_ci_excludes_0": false,
+        "forward_ci_entirely_below_0": false
+      },
+      "verdict": "not supported"
+    }
+  },
+  "primary_sample_zero_share": {
+    "complementarity": 0.3929645915297385,
+    "alt_deficiency_supply": 0.09835686183753761,
+    "alt_redundancy": 0.285813469104374,
+    "alt_specialist_coverage": 0.4133302476278639
+  },
+  "primary_sample_corr_with_quality": {
+    "complementarity": 0.30255252548776024,
+    "alt_deficiency_supply": 0.41415543854092174,
+    "alt_redundancy": 0.3818348274988226,
+    "alt_specialist_coverage": 0.494522653566074
+  },
+  "primary_cores_with_no_gap_share": 0.09276642738818332,
+  "knicks_2024_25_example": [
+    {
+      "fifth_id_name": "Jalen Brunson",
+      "possessions": 1889.5,
+      "net_rating": 3.0790548530959683,
+      "complementarity": 0.0,
+      "alt_deficiency_supply": 0.8442207857345272,
+      "alt_redundancy": 0.3390260458469213,
+      "alt_specialist_coverage": 4.44097456607966
+    },
+    {
+      "fifth_id_name": "Miles McBride",
+      "possessions": 361.0,
+      "net_rating": 2.674953959484355,
+      "complementarity": 0.0,
+      "alt_deficiency_supply": -0.5261058211699879,
+      "alt_redundancy": 0.38873361053504013,
+      "alt_specialist_coverage": 0.2589384100235319
+    },
+    {
+      "fifth_id_name": "Cameron Payne",
+      "possessions": 200.0,
+      "net_rating": 14.0,
+      "complementarity": 0.0,
+      "alt_deficiency_supply": -0.15777309165504366,
+      "alt_redundancy": 0.2755864191767222,
+      "alt_specialist_coverage": 0.5286202365215329
+    },
+    {
+      "fifth_id_name": "Delon Wright",
+      "possessions": 164.0,
+      "net_rating": -1.1527591848876997,
+      "complementarity": 0.0,
+      "alt_deficiency_supply": -0.12269288418894868,
+      "alt_redundancy": 0.0,
+      "alt_specialist_coverage": 0.588843333700249
+    }
+  ]
+}

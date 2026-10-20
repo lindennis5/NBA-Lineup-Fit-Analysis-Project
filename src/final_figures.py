@@ -113,14 +113,14 @@ def metric_comparison():
     ax.set_title('Original score and three alternatives: same answer', loc='left')
     ax.plot([], [], 'o', color=BLUE, label='Validated seasons')
     ax.plot([], [], 'o', color=ORANGE, mfc='white', label='All four seasons (provisional)')
-    ax.legend(frameon=False, loc='lower right')
+    ax.legend(frameon=False, loc='upper center', bbox_to_anchor=(.5, -.14), ncol=2)
     fig.text(.01, .01, 'Alternatives were pre-registered before testing; none is called supported unless all three gates in the pre-registration pass.\n95% franchise-clustered intervals. ' + SOURCE, fontsize=8)
-    fig.tight_layout(rect=[0, .07, 1, 1])
+    fig.tight_layout(rect=[0, .09, 1, 1])
     save_figure(fig, 'metric_comparison')
 
 def talent_complementarity(d):
     primary = comparison_sample(d, 50)
-    fig, axes = plt.subplots(1, 2, figsize=(11, 5), sharex=True)
+    fig, axes = plt.subplots(1, 2, figsize=(11.5, 5.6), sharex=True, constrained_layout=True)
     for ax, (col, title) in zip(axes, [('complementarity', 'Original: largest-gap closure'),
                                        ('alt_deficiency_supply', 'A1: deficiency-weighted skill supply')]):
         hb = ax.hexbin(primary.fifth_quality, primary[col], gridsize=35, mincnt=1, cmap='Blues', bins='log')
@@ -130,8 +130,9 @@ def talent_complementarity(d):
         ax.text(.02, .95, f'{zero:.1%} of rows exactly 0\ncorrelation with talent {corr:+.2f}', transform=ax.transAxes,
                 va='top', fontsize=9, bbox=dict(facecolor='white', edgecolor='none', alpha=.85))
     axes[0].set_ylabel('Score (standardized skill units)')
-    fig.colorbar(hb, ax=axes, label='Core/fifth rows per hexagon (log scale)', shrink=.8)
+    fig.colorbar(hb, ax=axes, label='Core/fifth rows per hexagon (log scale)', shrink=.8, pad=.02)
     fig.text(.01, .01, f'{len(primary):,} core/fifth rows with 50+ possessions per side; dependent rows, descriptive only. ' + SOURCE, fontsize=8)
+    fig.get_layout_engine().set(rect=(0, .05, 1, .95))
     save_figure(fig, 'talent_complementarity')
 
 def forward_prediction():
@@ -184,8 +185,9 @@ def knicks_example(d, s):
     ax.set_title(f'Knicks core: {names}', loc='left', fontsize=11)
     ax.legend(frameon=False, loc='lower right', fontsize=9)
     fig.text(.01, .01, f'Bold row = the core\'s largest gap ({weakest}, blocks only; {first.deficiency_gap:.2f} SD). Candidates are the four with the most shared possessions.{prov}\n'
-             'The original score credits only that one row, so Brunson scores 0 despite elite creation. A1 credits skill wherever the core is weak. Illustration, not advice. ' + SOURCE, fontsize=8)
-    fig.tight_layout(rect=[0, .09, 1, 1])
+             'The original score credits only that one row, so Brunson scores 0 despite elite creation. A1 credits skill wherever the core is weak.\n'
+             'Illustration, not advice. ' + SOURCE, fontsize=8)
+    fig.tight_layout(rect=[0, .11, 1, 1])
     save_figure(fig, 'knicks_example')
 
 def core_deficiencies(d):

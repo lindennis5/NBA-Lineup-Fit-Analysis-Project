@@ -1,0 +1,5 @@
+season,teams,games,off_possessions,def_possessions,points_scored,points_allowed,points_balance,possession_balance,balanced_counters,official_scoring_verified,status,disposition
+2022-23,30,1230.0,244628,244628,282127,282127,0.0,0.0,True,True,balanced counters; lineup/game-level external validation still limited,validated
+2023-24,30,1230.0,242779,242779,280960,280960,0.0,0.0,True,False,balanced counters; lineup/game-level external validation still limited,validated
+2024-25,30,1230.0,243787,243789,279953,280009,-56.0,-2.0,False,False,provisional: unresolved upstream counter imbalance,provisional
+2025-26,30,1230.0,245196,247046,284394,284394,0.0,-1850.0,False,False,provisional: unresolved upstream counter imbalance,provisional

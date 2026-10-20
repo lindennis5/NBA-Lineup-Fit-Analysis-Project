@@ -38,7 +38,7 @@ In 2024–25, one Knicks core was Karl-Anthony Towns, OG Anunoby, Josh Hart and 
 
 Now add Jalen Brunson. His creation score is +3.46 standard deviations, and his playmaking is +1.61. By any basketball standard he is an elite fit for what a four-man group needs to function. But my score gives him exactly **zero**. His block rate can't fill the blocks gap, and the score only looks at the single biggest gap. Miles McBride, Cameron Payne and Delon Wright also get zero. The score can't tell any of them apart.
 
-That is not a verdict on Brunson. It is a verdict on the score. Of the lineups I analyzed, 39.3% scored exactly zero, and the score correlates only 0.30 with the player's overall quality. I wrote down three better-motivated alternatives before testing them, to avoid choosing a version that happened to look good, and I report all of them in the project's audit.
+That is not a verdict on Brunson. It is a verdict on the score. Of the lineups I analyzed, 39.3% scored exactly zero, and the score correlates only 0.30 with the player's overall quality. I wrote down three better-motivated alternatives before testing them, to avoid choosing a version that happened to look good. One of them, which credits skill wherever the core is weak, does separate the Knicks candidates: Brunson +0.84, McBride −0.53, Payne −0.16, Wright −0.12. But none of the three predicted lineup results any better. All three came out null, just like the original.
 
 ![Knicks core profile and four candidate fifth players](../figures/knicks_example.png)
 

@@ -119,6 +119,7 @@ def bbref_players(season):
     table = pd.DataFrame(parser.rows)
     table['key'] = table.name_display.map(plain)
     table = table.drop_duplicates('key')[['name_display', 'key', 'games', 'mp', 'pts', 'ast', 'blk']]
+    table[['games', 'mp', 'pts', 'ast', 'blk']] = table[['games', 'mp', 'pts', 'ast', 'blk']].apply(pd.to_numeric, errors='coerce')
     EXTERNAL.mkdir(parents=True, exist_ok=True)
     table.to_csv(path, index=False)
     time.sleep(6)

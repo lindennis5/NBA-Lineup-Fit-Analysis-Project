@@ -7,7 +7,7 @@ Every number below appears in `docs/claims.json` (built from regenerated outputs
 - Built a reproducible Python pipeline that assembles 70,064 five-player NBA lineups across four seasons and reconciles every team's time, possessions and points to provider totals, with an automated test suite that fails the build on mismatched data.
 - Tested whether filling a lineup's largest skill gap beats adding a more talented player using core fixed-effects regression with franchise-clustered inference; reported a null result (−0.03 net points per 100 possessions per 0.1 gap closed, 95% interval [−1.63, +1.57]) rather than a forced finding.
 - Audited the source data against an independent site and found the provider's 2024–25 points scored 57 short across 11 teams and 2025–26 defensive possessions inflated by 0.73 percentage points; labelled those seasons provisional and reported the validated seasons as the headline.
-- Pre-registered three alternative fit metrics before running them, with a three-gate decision rule and multiple-testing adjustment, to avoid choosing a metric after seeing results.
+- Pre-registered three alternative fit metrics before running them, with a three-gate decision rule and multiple-testing adjustment, then reported all three nulls (adjusted p-values of 1.00) rather than choosing a metric after seeing results.
 
 ## LinkedIn description
 
