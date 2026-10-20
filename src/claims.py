@@ -13,7 +13,8 @@ AUDIT = DOCS / 'audit'
 # Fixed design constants that may appear in prose (thresholds, seeds, draws, scale factors).
 CONSTANTS = {'bootstrap_draws': 1999, 'bootstrap_seed': 20261016, 'primary_min_possessions': 50,
              'profile_min_minutes': 500, 'threshold_low': 25, 'threshold_high': 100, 'equivalence_margin': 1.0,
-             'games_per_team': 82, 'teams': 30, 'seasons': 4, 'gap_unit': 0.1, 'possession_formula_ft': 0.44}
+             'games_per_team': 82, 'teams': 30, 'seasons': 4, 'gap_unit': 0.1, 'possession_formula_ft': 0.44,
+             'minutes_floor': 3936, 'minutes_ceiling': 4200, 'provider_http_error': 502}
 
 def load(name, directory=DOCS):
     path = directory / name
@@ -108,7 +109,12 @@ def build():
             put(v, f'external.{season}.mean_off_gap_pct', 100 * g.off_rel_gap.mean())
             put(v, f'external.{season}.mean_def_gap_pct', 100 * g.def_rel_gap.mean())
             put(v, f'external.{season}.def_minus_off_gap_pct', 100 * (g.def_rel_gap.mean() - g.off_rel_gap.mean()))
+        base = ext[ext.season.isin(['2022-23', '2023-24'])]
+        put(v, 'external.calibrated_tolerance_pct', 100 * max(base.off_rel_gap.abs().max(), base.def_rel_gap.abs().max()))
         put(v, 'external.nyk_2024_25_points_shortfall', -ext[(ext.season == '2024-25') & (ext.team == 'NYK')].points_diff.sum())
+    if meta is not None:
+        for _, r in meta.iterrows():
+            put(v, f'metric.{r.scope}.{r.metric}.zero_share_pct', 100 * r.zero_share)
     structural = load('structural_checks.json', AUDIT) or {}
     for season, r in structural.items():
         if season == 'spot_check':

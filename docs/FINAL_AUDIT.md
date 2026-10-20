@@ -7,7 +7,7 @@ Branch `finish/final-release`. Plan: [`PLAN.md`](../PLAN.md). Pre-registration: 
 | Area | Status | Evidence |
 |---|---|---|
 | B1 Raw data and reproducibility | **Done** | 450 of 457 inventory files re-downloaded with 0 checksum mismatches (the 7 absent files are API probe files the pipeline never reads); `run.py --release --notebooks` completes offline in about a minute; 25 result files match snapshot `docs/runs/7955a2391b0d` at 1e-9 (one intentional difference: new `disposition` column) |
-| B2 Season discrepancies | **Documented** (causes unresolved) | `docs/audit/external_team_check.csv`, `docs/season_validation_status.csv` |
+| B2 Season discrepancies | **Documented** (origins unresolved) | `docs/audit/external_team_check.csv`, `docs/season_validation_status.csv` |
 | B3 IDs, lineups, possessions, coverage | **Done; one flag** | `docs/audit/structural_checks.json`, `docs/audit/player_spotcheck.csv` |
 | B4 Claims vs outputs | **Done** | `docs/claims.json`, `tests/test_claims_trace.py` |
 | B5, B6 Robustness | **Done** | `docs/audit/final_robustness.csv`, `docs/audit/selection_table.csv`, `docs/extended_coefficients.csv` |
@@ -17,7 +17,7 @@ Branch `finish/final-release`. Plan: [`PLAN.md`](../PLAN.md). Pre-registration: 
 
 ## B1. Reproducibility
 
-The raw cache had to be rebuilt (it held only 2022–23 at the start). The provider (api.pbpstats.com) was slow and intermittently returned HTTP 502; the download was stopped by the project owner with 450 of 457 payload files present. The 7 absent files are `probe_*.json`, `pbp_latest_teams.json`, `pbp_team_lineup.json` and `pbpstats_openapi.json`, written during the original feasibility probes; no analysis step reads them. Every payload that was re-downloaded matches its recorded SHA-256, so the provider has not revised the records retrieved. The results of the final run are archived in `docs/runs/bab0fe46c773`. Python 3.14.8 with the locked dependencies reproduces the Windows/3.12 results to within 1e-9.
+The raw cache had to be rebuilt (it held only 2022–23 at the start). The provider (api.pbpstats.com) was slow and intermittently returned HTTP 502; the download was stopped by the project owner with 450 of 457 payload files present. The 7 absent files are `probe_*.json`, `pbp_latest_teams.json`, `pbp_team_lineup.json` and `pbpstats_openapi.json`, written during the original feasibility probes; no analysis step reads them. Every payload that was re-downloaded matches its recorded checksum, so the provider has not revised the records retrieved. The results of the final run are archived in `docs/runs/bab0fe46c773`. Python 3.14.8 with the locked dependencies reproduces the Windows/3.12 results to within 1e-9.
 
 ## B2. The 2024–25 and 2025–26 discrepancies
 
@@ -30,8 +30,8 @@ Independent source: Basketball-Reference team and opponent totals (`data/externa
 | 2024–25 | 19 of 30 | −2.80% / −2.80% | provisional |
 | 2025–26 | 28 of 30 | −2.81% / −2.08% | provisional |
 
-- **2024–25:** provider points scored are 57 below the independent totals on 11 teams (largest: Knicks, 12); opponent points match except 1 point for Portland. That is the league imbalance of −56, a loss of scored points rather than a possessions problem. The player spot-check localizes the Knicks' 12 points: Anunoby is 8 points short and Hart 2 (and 1 assist); Brunson matches exactly. Cause unresolved. The 25 lineups whose provider plus-minus disagrees with points minus opponent points are listed in `docs/provider_plusminus_discrepancies.csv`.
-- **2025–26:** the offensive side sits at the same gap to the estimate as in every earlier season (about −2.8%). The defensive side sits 0.73 percentage points higher on every team: the 1,850-possession league imbalance is inflated defensive possessions, not lost offensive ones. Cause unresolved. Points are off by 1 on two teams.
+- **2024–25:** provider points scored are 57 below the independent totals on 11 teams (largest: Knicks, 12); opponent points match except 1 point for Portland. That is the league imbalance of −56, a loss of scored points rather than a possessions problem. The player spot-check localizes the Knicks' 12 points: Anunoby is 8 points short and Hart 2 (and 1 assist); Brunson matches exactly. Origin unresolved. The 25 lineups whose provider plus-minus disagrees with points minus opponent points are listed in `docs/provider_plusminus_discrepancies.csv`.
+- **2025–26:** the offensive side sits at the same gap to the estimate as in every earlier season (about −2.8%). The defensive side sits 0.73 percentage points higher on every team: the 1,850-possession league imbalance is inflated defensive possessions, not lost offensive ones. Origin unresolved. Points are off by 1 on two teams.
 - **Limit of the possession check:** the estimator's own error (about 2.8% low, up to 4% for single teams) dwarfs the 0.73-point shift, so the calibrated tolerance cannot flag 2025–26 alone; the diagnosis comes from comparing the offensive and defensive gaps, and points and games are the exact test.
 - No provider data were repaired or guessed. The headline estimate uses only validated seasons; pooled results are labelled provisional.
 
@@ -73,7 +73,7 @@ A1 deficiency-weighted skill supply, A2 skill redundancy, A3 specialist coverage
 
 | Score | Validated seasons: effect per SD [95% interval] | Wild p | Holm p | Pooled effect [95% interval] | Forward ΔRMSE [95% interval] | Rows exactly 0 | Verdict |
 |---|---|---:|---:|---|---|---:|---|
-| Original | −0.02 [−1.33, +1.28] | 0.96 | n/a | −0.04 [−0.74, +0.66] | +0.0009 [−0.0057, +0.0069] | 37.8% (39.3% pooled) | reference |
+| Original | −0.02 [−1.33, +1.28] | 0.96 | n/a | −0.04 [−0.74, +0.66] | +0.0009 [−0.0057, +0.0069] | 37.7% (39.3% pooled) | reference |
 | A1 | −0.28 [−1.70, +1.14] | 0.60 | 1.00 | −0.26 [−1.02, +0.51] | −0.0011 [−0.0094, +0.0086] | 10.9% | not supported |
 | A2 | +0.13 [−1.49, +1.75] | 0.83 | 1.00 | −0.09 [−0.98, +0.80] | +0.0074 [−0.0015, +0.0152] | 29.6% | not supported |
 | A3 | +0.27 [−1.14, +1.67] | 0.62 | 1.00 | +0.18 [−0.74, +1.09] | +0.0032 [−0.0049, +0.0115] | 41.4% | not supported |
@@ -94,7 +94,7 @@ No alternative passes any of the three gates. A1 does separate the Knicks candid
 
 ## Unresolved
 
-1. Causes of the provider discrepancies in 2024–25 (scored points) and 2025–26 (defensive possessions).
+1. Origins of the provider discrepancies in 2024–25 (scored points) and 2025–26 (defensive possessions).
 2. 2024–25 and 2025–26 remain provisional; the pooled estimate depends on them.
 3. The Charles Bassey flag and the 252–1,132 lineups per season with unresolved IDs are documented, not explained.
 4. Effects up to about 1.0 net points per 100 possessions per SD cannot be ruled out with the validated seasons alone.

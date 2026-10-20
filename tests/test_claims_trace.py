@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DELIVERABLES = ['README.md', 'docs/fans.md', 'docs/medium_article_outline.md', 'docs/career_materials.md',
-                'site/index.html']
+                'docs/FINAL_AUDIT.md', 'site/index.html']
 BANNED = [r'\bcauses\b', r'\bcaused\b', r'\bproves?\b', r"fit doesn'?t matter", r'chemistry is a myth']
 NUMBER = re.compile(r'(?<![\w.])\d[\d,]*(?:\.\d+)?%?(?![\w])')
 
