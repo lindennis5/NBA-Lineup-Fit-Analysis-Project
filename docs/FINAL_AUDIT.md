@@ -9,7 +9,7 @@ Branch `finish/final-release`. Plan: [`PLAN.md`](../PLAN.md). This file records 
 | Independent season validation (B2) | **Done** | `docs/audit/external_team_check.csv`, `docs/season_validation_status.csv` |
 | Claims vs outputs (B4) | **Done** (mechanism); re-run after every regeneration | `docs/claims.json`, `tests/test_claims_trace.py` |
 | Clean-environment install and tests (item 3) | **Done** | pip install of `requirements-lock.txt` into a fresh venv; `pip check` clean; test suite passes |
-| Raw data re-acquisition and checksum check (B1) | **Blocked, in progress** | The provider (api.pbpstats.com) intermittently returns HTTP 502 and responds in 20–60 s; only part of the raw cache could be rebuilt. See below. |
+| Raw data re-acquisition and checksum check (B1) | **Incomplete, stopped by the project owner** | The provider (api.pbpstats.com) intermittently returned HTTP 502 and responded in 20–60 s. The re-download was aborted on request with 450 of 457 payload files present (7 missing), 0 mismatched. See below. |
 | Structural validation of IDs, lineups, possessions, coverage (B3) | **Code and tests written; run blocked** | `src/structural_checks.py`, `tests/test_structural_checks.py`; needs the rebuilt processed tables |
 | Robustness and sample sensitivity (B5, B6) | **Code and tests written; run blocked** | `src/final_robustness.py`, `tests/test_final_robustness.py`; the 17 pre-existing specifications are in `docs/extended_coefficients.csv` |
 | Alternative metrics (section 3 of the plan) | **Pre-registered, code and tests written; run blocked** | `docs/metric_preregistration.md` (committed first), `src/alternative_metrics.py`, `src/metric_comparison.py` |
@@ -20,8 +20,8 @@ Nothing marked blocked has results yet. No result is claimed for it anywhere in 
 ## B1. Data availability and reproducibility
 
 - At the start of this work `data/raw` held 74 files (2022–23 only) and `data/processed` was empty, so the four-season numbers could not be re-derived locally. The numbers in the documents were checked against the committed `docs/` outputs, where they match.
-- Raw payloads verified so far match `docs/raw_inventory.json` byte for byte (`scripts/verify_raw_inventory.py`: 0 mismatched among the files already re-downloaded). Missing files are listed by that script.
-- A background retry loop keeps downloading until `docs/download_failures.json` is empty. When it completes, run the commands in `docs/REPRODUCING.md` (`run.py --release`, `scripts/compare_outputs.py docs/runs/7955a2391b0d docs`, then the audit steps) and the revision gate in `PLAN.md` applies.
+- Raw payloads re-downloaded match `docs/raw_inventory.json` byte for byte (`scripts/verify_raw_inventory.py` at the stop: 457 expected, 7 missing, 0 mismatched, 0 unexpected). So the provider has not revised the records retrieved so far.
+- The download was stopped by the project owner before the last 7 files arrived. The pipeline refuses incomplete data, so the regenerated analysis was not run. To finish: rerun `run.py --download-only --workers 2` until `docs/download_failures.json` is `[]`, then follow `docs/REPRODUCING.md` (`run.py --release`, `scripts/compare_outputs.py docs/runs/7955a2391b0d docs`, then the audit steps); the revision gate in `PLAN.md` applies.
 
 ## B2. The 2024–25 and 2025–26 discrepancies
 
@@ -59,7 +59,7 @@ The largest-gap-closure score is a poor representation of fit: it credits one of
 
 ## Unresolved
 
-1. B1 data re-acquisition (provider outage); everything downstream of it, including B3, B5, B6, the alternative-metric results and the regenerated figures and notebooks.
+1. B1 data re-acquisition (7 files short; stopped on request); everything downstream of it, including B3, B5, B6, the alternative-metric results and the regenerated figures and notebooks.
 2. Causes of the provider discrepancies in 2024–25 and 2025–26.
 3. Remote CI has not been run; nothing was pushed.
 4. `notebooks/01_data_feasibility.ipynb` still carries an accidental error output from a system-Python run (uncommitted); it is overwritten when notebooks are regenerated.
